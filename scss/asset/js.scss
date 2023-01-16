@@ -1,0 +1,436 @@
+/*　スクロールしたら文字が下から上にスライド表示される */
+._scrollBothSlideUp, ._scrollTextSlideUp, ._scrollSlide  {
+    opacity: 0;
+    visibility: hidden;
+    transition: 1s;
+    transform: translate(0, 1rem);
+}
+
+._scrollSlideUp {
+    opacity: 0;
+    visibility: hidden;
+    transition: 3s;
+    transform: translate(0, 8rem);
+}
+
+._scrollSlideSaku, ._scrollSlideFuwa {
+    opacity: 0;
+    visibility: hidden;
+    transition: 2s;
+    transform: translate(0, 2rem);
+}
+
+/*　スクロールしたら文字が上から下にスライド表示される */
+._scrollBothSlideDown {
+    opacity: 0;
+    visibility: hidden;
+    transition: 0.8s;
+    transform: translateY(-10%);
+}
+
+._scrollBothSlideDownSec {
+    opacity: 0;
+    visibility: hidden;
+    transition: 2s;
+    transform: translateY(-10%);
+}
+
+._scrollBothSlideDownThr {
+    opacity: 0;
+    visibility: hidden;
+    transition: 4s;
+    transform: translateY(-10%);
+}
+
+/*　スクロールイベントが実装されたら付与されるクラス */
+._isActiveBothSlideUp {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+._isActiveBothSlideDown {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+
+/*　リスト　時間差アニメーション */
+._scrollBothListUp {
+    opacity: 0;
+    visibility: hidden;
+    transition: 1s;
+    transform: translate(0, 1rem);
+}
+
+.js-timeLag {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+
+/*中の要素*/
+.js-slideText {
+    // animation-name:js-textSecond;
+    animation-duration: 0.8s;
+    animation-fill-mode: forwards;
+    color: #fff;
+    -webkit-clip-path: inset(0 100% 0 0);
+    clip-path: inset(0 100% 0 0);
+}
+
+// @keyframes js-textSecond{
+//     0% {
+//         transform:scaleX(-100%);
+//         opacity: 0;
+//     }
+//     100% {
+//         transform:scaleX(0);
+//         opacity: 1;
+//     }
+// }
+
+/*左から右に流れるスタイル　背景色ブラック*/
+.js-price {
+    animation-name: js-priceBack;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: block;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.88);
+    content: '';
+}
+
+@keyframes js-priceBack {
+    0% {
+        transform-origin: left;
+        transform: scaleX(0);
+    }
+
+    50% {
+        transform-origin: left;
+        transform: scaleX(1);
+    }
+}
+
+// .js-ScrollSlide {
+//     opacity: 0;
+// }
+
+/*左から右に流れるスタイル　背景色イエロー*/
+.js-passion {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 0;
+    width: 100%;
+    height: 100%;
+    background-color: gold;
+    content: '';
+    animation-name: js-passionBack;
+    animation-duration: 2s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes js-passionBack {
+    0% {
+        transform-origin: left;
+        transform: scaleX(0);
+    }
+
+    50% {
+        transform-origin: left;
+        transform: scaleX(1);
+    }
+}
+
+.js-passionImg {
+    content: '';
+    animation-name: js-passionImg;
+    animation-duration: 2s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes js-passionImg {
+    0% {
+        transform-origin: left;
+        transform: scaleX(0);
+    }
+
+    50% {
+        transform-origin: left;
+        transform: scaleX(1);
+    }
+}
+
+/*下から上に流れるスタイル　背景色イエロー*/
+.js-material {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: block;
+    width: 100%;
+    height: 100%;
+    background-color: gold;
+    content: '';
+    animation-name: js-materialBack;
+    animation-duration: 2s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes js-materialBack {
+    0% {
+        transform-origin: bottom;
+        transform: scaleY(0);
+    }
+
+    50% {
+        transform-origin: bottom;
+        transform: scaleY(1);
+    }
+}
+
+/*　画面スクロール時、左から右に画像表示　*/
+._scrollSlideImgLeft {
+    clip-path: inset(0 100% -20% 0);
+    transition: clip-path 2s cubic-bezier(0.19, 1, 0.22, 1);
+    transition-delay: 0s;
+}
+
+._scrollSlideImgLeft.is-active {
+    clip-path: inset(0 0 -20% 0);
+}
+
+._scrollSlideImgLeftSec {
+    clip-path: inset(0 100% -20% 0);
+    transition: clip-path 2s cubic-bezier(0.19, 1, 0.22, 1);
+    transition-delay: 0s;
+}
+
+._scrollSlideImgLeftSec.is-active {
+    clip-path: inset(0 0 -20% 0);
+}
+
+
+
+/*　画面スクロール時、右から左に画像表示　*/
+._scrollSlideImgRight {
+    clip-path: inset(0 -20% 0 100%);
+    transition: clip-path 2s cubic-bezier(0.19, 1, 0.22, 1);
+    transition-delay: 0s;
+}
+
+._scrollSlideImgRight.is-active {
+    clip-path: inset(0 -20% 0 0);
+}
+
+._scrollSlideImgRightSec {
+    clip-path: inset(0 -20% 0 100%);
+    transition: clip-path 2s cubic-bezier(0.19, 1, 0.22, 1);
+    transition-delay: 0s;
+}
+
+._scrollSlideImgRightSec.is-active {
+    clip-path: inset(0 -20% 0 0);
+}
+
+/*　画面スクロース時、下から上に画像表示　*/
+._scrollSlideImgUp {
+    clip-path: inset(100% 0 -20% 0);
+    transition: clip-path 2s cubic-bezier(0.19, 1, 0.22, 1);
+    transition-delay: 0s;
+}
+
+._scrollSlideImgUp.is-active {
+    clip-path: inset(0 -20% 0 0);
+}
+
+._scrollSlideImgUpSec {
+    clip-path: inset(100% 0 -20% 0);
+    transition: clip-path 2s cubic-bezier(0.19, 1, 0.22, 1);
+    transition-delay: 0s;
+}
+
+._scrollSlideImgUpSec.is-active {
+    clip-path: inset(0 -20% 0 0);
+}
+
+/*　画面ロード時、上から下に画像表示　*/
+._lordSlideImgDown {
+    clip-path: inset(-20% 0 100% 0);
+    transition: clip-path 2s cubic-bezier(0.19, 1, 0.22, 1);
+    transition-delay: 0s;
+}
+
+._lordSlideImgDown.is-active {
+    clip-path: inset(0 -20% 0 0);
+}
+
+
+/*　画面ロード時、下から上に画像表示　*/
+._lordSlideImgUp {
+    clip-path: inset(100% 0 -20% 0);
+    transition: clip-path 2s cubic-bezier(0.19, 1, 0.22, 1);
+    transition-delay: 0s;
+}
+
+._lordSlideImgUp.is-active {
+    clip-path: inset(0 -20% 0 0);
+}
+
+._lordSlideImgUpSec {
+    clip-path: inset(100% 0 -20% 0);
+    transition: clip-path 2s cubic-bezier(0.19, 1, 0.22, 1);
+    transition-delay: 0s;
+}
+
+._lordSlideImgUpSec.is-active {
+    clip-path: inset(0 -20% 0 0);
+}
+/*　画面ロード時、左から右に画像表示　*/
+._lordSlideImgLeft {
+    clip-path: inset(0 100% -20% 0);
+    transition: clip-path 2s cubic-bezier(0.19, 1, 0.22, 1);
+    transition-delay: 0s;
+}
+
+._lordSlideImgLeft.is-active {
+    clip-path: inset(0 -20% 0 0);
+}
+
+/* CHEESE・TART　縦書きの文字を一文字ずつ表示する */
+
+.js-textSlideDown {
+    animation-name: slideTextY100;
+    animation-duration: 0.8s;
+    animation-fill-mode: forwards;
+    opacity: 0;
+}
+
+@keyframes slideTextY100 {
+    from {
+        transform: translateY(-100%);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.js-textSlide {
+    animation-name: slideTextY-100;
+    animation-duration: 0.8s;
+    animation-fill-mode: forwards;
+    opacity: 0;
+}
+
+
+@keyframes slideTextY-100 {
+    from {
+        transform: translateY(100%);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+/* passion項目の文字を一文字ずつ表示する */
+.slideAnimeLeft {
+    animation-name: slideTextX100;
+    animation-duration: 0.8s;
+    animation-fill-mode: forwards;
+    opacity: 0;
+}
+
+@keyframes slideTextX100 {
+    from {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+.slideAnimeRight {
+    animation-name: slideTextX-100;
+    animation-duration: 0.8s;
+    animation-fill-mode: forwards;
+    opacity: 0;
+}
+
+
+@keyframes slideTextX-100 {
+    from {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+/* 文字をフェードインさせる */
+.js-fadeIn {
+    animation-name: fadeInAnime;
+    animation-duration: 2s;
+    animation-fill-mode: forwards;
+    opacity: 0;
+}
+
+@keyframes fadeInAnime {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+// .p-menu__langGroup.item {
+//     animation: diagonal-move-anim 3s linear infinite alternate;
+// }
+
+// @keyframes diagonal-move-anim {
+//     0% {
+//         transform: translate(0, 0);
+//     }
+//     100% {
+//         transform: translate(50px, 50px);
+//     }
+// }
+
+// .p-menu__langGroup.js-active {
+//     opacity: 1;
+//     visibility: visible;
+//     transition: 2s;
+// }
+
+.p-menu__langGroup.js-active {
+    display: block;
+    transition-duration: 3s;
+}
+
+.p-menu__shopLink.js-toHide {
+    transform: translateY(-204%);
+}
+
+.fa-caret-down.js-revolving {
+    transform: rotate(180deg);
+}

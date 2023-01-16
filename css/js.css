@@ -1,0 +1,543 @@
+@charset "UTF-8";
+/*　スクロールしたら文字が下から上にスライド表示される */
+._scrollBothSlideUp, ._scrollTextSlideUp, ._scrollSlide {
+  opacity: 0;
+  visibility: hidden;
+  transition: 1s;
+  transform: translate(0, 1rem);
+}
+
+._scrollSlideUp {
+  opacity: 0;
+  visibility: hidden;
+  transition: 3s;
+  transform: translate(0, 8rem);
+}
+
+._scrollSlideSaku, ._scrollSlideFuwa {
+  opacity: 0;
+  visibility: hidden;
+  transition: 2s;
+  transform: translate(0, 2rem);
+}
+
+/*　スクロールしたら文字が上から下にスライド表示される */
+._scrollBothSlideDown {
+  opacity: 0;
+  visibility: hidden;
+  transition: 0.8s;
+  transform: translateY(-10%);
+}
+
+._scrollBothSlideDownSec {
+  opacity: 0;
+  visibility: hidden;
+  transition: 2s;
+  transform: translateY(-10%);
+}
+
+._scrollBothSlideDownThr {
+  opacity: 0;
+  visibility: hidden;
+  transition: 4s;
+  transform: translateY(-10%);
+}
+
+/*　スクロールイベントが実装されたら付与されるクラス */
+._isActiveBothSlideUp {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+._isActiveBothSlideDown {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+/*　リスト　時間差アニメーション */
+._scrollBothListUp {
+  opacity: 0;
+  visibility: hidden;
+  transition: 1s;
+  transform: translate(0, 1rem);
+}
+
+.js-timeLag {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+/*中の要素*/
+.js-slideText {
+  -webkit-animation-duration: 0.8s;
+          animation-duration: 0.8s;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+  color: #fff;
+  -webkit-clip-path: inset(0 100% 0 0);
+  clip-path: inset(0 100% 0 0);
+}
+
+/*左から右に流れるスタイル　背景色ブラック*/
+.js-price {
+  -webkit-animation-name: js-priceBack;
+          animation-name: js-priceBack;
+  -webkit-animation-duration: 1s;
+          animation-duration: 1s;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.88);
+  content: "";
+}
+
+@-webkit-keyframes js-priceBack {
+  0% {
+    transform-origin: left;
+    transform: scaleX(0);
+  }
+  50% {
+    transform-origin: left;
+    transform: scaleX(1);
+  }
+}
+
+@keyframes js-priceBack {
+  0% {
+    transform-origin: left;
+    transform: scaleX(0);
+  }
+  50% {
+    transform-origin: left;
+    transform: scaleX(1);
+  }
+}
+/*左から右に流れるスタイル　背景色イエロー*/
+.js-passion {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 0;
+  width: 100%;
+  height: 100%;
+  background-color: gold;
+  content: "";
+  -webkit-animation-name: js-passionBack;
+          animation-name: js-passionBack;
+  -webkit-animation-duration: 2s;
+          animation-duration: 2s;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+}
+
+@-webkit-keyframes js-passionBack {
+  0% {
+    transform-origin: left;
+    transform: scaleX(0);
+  }
+  50% {
+    transform-origin: left;
+    transform: scaleX(1);
+  }
+}
+
+@keyframes js-passionBack {
+  0% {
+    transform-origin: left;
+    transform: scaleX(0);
+  }
+  50% {
+    transform-origin: left;
+    transform: scaleX(1);
+  }
+}
+.js-passionImg {
+  content: "";
+  -webkit-animation-name: js-passionImg;
+          animation-name: js-passionImg;
+  -webkit-animation-duration: 2s;
+          animation-duration: 2s;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+}
+
+@-webkit-keyframes js-passionImg {
+  0% {
+    transform-origin: left;
+    transform: scaleX(0);
+  }
+  50% {
+    transform-origin: left;
+    transform: scaleX(1);
+  }
+}
+
+@keyframes js-passionImg {
+  0% {
+    transform-origin: left;
+    transform: scaleX(0);
+  }
+  50% {
+    transform-origin: left;
+    transform: scaleX(1);
+  }
+}
+/*下から上に流れるスタイル　背景色イエロー*/
+.js-material {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  background-color: gold;
+  content: "";
+  -webkit-animation-name: js-materialBack;
+          animation-name: js-materialBack;
+  -webkit-animation-duration: 2s;
+          animation-duration: 2s;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+}
+
+@-webkit-keyframes js-materialBack {
+  0% {
+    transform-origin: bottom;
+    transform: scaleY(0);
+  }
+  50% {
+    transform-origin: bottom;
+    transform: scaleY(1);
+  }
+}
+
+@keyframes js-materialBack {
+  0% {
+    transform-origin: bottom;
+    transform: scaleY(0);
+  }
+  50% {
+    transform-origin: bottom;
+    transform: scaleY(1);
+  }
+}
+/*　画面スクロール時、左から右に画像表示　*/
+._scrollSlideImgLeft {
+  -webkit-clip-path: inset(0 100% -20% 0);
+          clip-path: inset(0 100% -20% 0);
+  transition: -webkit-clip-path 2s cubic-bezier(0.19, 1, 0.22, 1);
+  transition: clip-path 2s cubic-bezier(0.19, 1, 0.22, 1);
+  transition: clip-path 2s cubic-bezier(0.19, 1, 0.22, 1), -webkit-clip-path 2s cubic-bezier(0.19, 1, 0.22, 1);
+  transition-delay: 0s;
+}
+
+._scrollSlideImgLeft.is-active {
+  -webkit-clip-path: inset(0 0 -20% 0);
+          clip-path: inset(0 0 -20% 0);
+}
+
+._scrollSlideImgLeftSec {
+  -webkit-clip-path: inset(0 100% -20% 0);
+          clip-path: inset(0 100% -20% 0);
+  transition: -webkit-clip-path 2s cubic-bezier(0.19, 1, 0.22, 1);
+  transition: clip-path 2s cubic-bezier(0.19, 1, 0.22, 1);
+  transition: clip-path 2s cubic-bezier(0.19, 1, 0.22, 1), -webkit-clip-path 2s cubic-bezier(0.19, 1, 0.22, 1);
+  transition-delay: 0s;
+}
+
+._scrollSlideImgLeftSec.is-active {
+  -webkit-clip-path: inset(0 0 -20% 0);
+          clip-path: inset(0 0 -20% 0);
+}
+
+/*　画面スクロール時、右から左に画像表示　*/
+._scrollSlideImgRight {
+  -webkit-clip-path: inset(0 -20% 0 100%);
+          clip-path: inset(0 -20% 0 100%);
+  transition: -webkit-clip-path 2s cubic-bezier(0.19, 1, 0.22, 1);
+  transition: clip-path 2s cubic-bezier(0.19, 1, 0.22, 1);
+  transition: clip-path 2s cubic-bezier(0.19, 1, 0.22, 1), -webkit-clip-path 2s cubic-bezier(0.19, 1, 0.22, 1);
+  transition-delay: 0s;
+}
+
+._scrollSlideImgRight.is-active {
+  -webkit-clip-path: inset(0 -20% 0 0);
+          clip-path: inset(0 -20% 0 0);
+}
+
+._scrollSlideImgRightSec {
+  -webkit-clip-path: inset(0 -20% 0 100%);
+          clip-path: inset(0 -20% 0 100%);
+  transition: -webkit-clip-path 2s cubic-bezier(0.19, 1, 0.22, 1);
+  transition: clip-path 2s cubic-bezier(0.19, 1, 0.22, 1);
+  transition: clip-path 2s cubic-bezier(0.19, 1, 0.22, 1), -webkit-clip-path 2s cubic-bezier(0.19, 1, 0.22, 1);
+  transition-delay: 0s;
+}
+
+._scrollSlideImgRightSec.is-active {
+  -webkit-clip-path: inset(0 -20% 0 0);
+          clip-path: inset(0 -20% 0 0);
+}
+
+/*　画面スクロース時、下から上に画像表示　*/
+._scrollSlideImgUp {
+  -webkit-clip-path: inset(100% 0 -20% 0);
+          clip-path: inset(100% 0 -20% 0);
+  transition: -webkit-clip-path 2s cubic-bezier(0.19, 1, 0.22, 1);
+  transition: clip-path 2s cubic-bezier(0.19, 1, 0.22, 1);
+  transition: clip-path 2s cubic-bezier(0.19, 1, 0.22, 1), -webkit-clip-path 2s cubic-bezier(0.19, 1, 0.22, 1);
+  transition-delay: 0s;
+}
+
+._scrollSlideImgUp.is-active {
+  -webkit-clip-path: inset(0 -20% 0 0);
+          clip-path: inset(0 -20% 0 0);
+}
+
+._scrollSlideImgUpSec {
+  -webkit-clip-path: inset(100% 0 -20% 0);
+          clip-path: inset(100% 0 -20% 0);
+  transition: -webkit-clip-path 2s cubic-bezier(0.19, 1, 0.22, 1);
+  transition: clip-path 2s cubic-bezier(0.19, 1, 0.22, 1);
+  transition: clip-path 2s cubic-bezier(0.19, 1, 0.22, 1), -webkit-clip-path 2s cubic-bezier(0.19, 1, 0.22, 1);
+  transition-delay: 0s;
+}
+
+._scrollSlideImgUpSec.is-active {
+  -webkit-clip-path: inset(0 -20% 0 0);
+          clip-path: inset(0 -20% 0 0);
+}
+
+/*　画面ロード時、上から下に画像表示　*/
+._lordSlideImgDown {
+  -webkit-clip-path: inset(-20% 0 100% 0);
+          clip-path: inset(-20% 0 100% 0);
+  transition: -webkit-clip-path 2s cubic-bezier(0.19, 1, 0.22, 1);
+  transition: clip-path 2s cubic-bezier(0.19, 1, 0.22, 1);
+  transition: clip-path 2s cubic-bezier(0.19, 1, 0.22, 1), -webkit-clip-path 2s cubic-bezier(0.19, 1, 0.22, 1);
+  transition-delay: 0s;
+}
+
+._lordSlideImgDown.is-active {
+  -webkit-clip-path: inset(0 -20% 0 0);
+          clip-path: inset(0 -20% 0 0);
+}
+
+/*　画面ロード時、下から上に画像表示　*/
+._lordSlideImgUp {
+  -webkit-clip-path: inset(100% 0 -20% 0);
+          clip-path: inset(100% 0 -20% 0);
+  transition: -webkit-clip-path 2s cubic-bezier(0.19, 1, 0.22, 1);
+  transition: clip-path 2s cubic-bezier(0.19, 1, 0.22, 1);
+  transition: clip-path 2s cubic-bezier(0.19, 1, 0.22, 1), -webkit-clip-path 2s cubic-bezier(0.19, 1, 0.22, 1);
+  transition-delay: 0s;
+}
+
+._lordSlideImgUp.is-active {
+  -webkit-clip-path: inset(0 -20% 0 0);
+          clip-path: inset(0 -20% 0 0);
+}
+
+._lordSlideImgUpSec {
+  -webkit-clip-path: inset(100% 0 -20% 0);
+          clip-path: inset(100% 0 -20% 0);
+  transition: -webkit-clip-path 2s cubic-bezier(0.19, 1, 0.22, 1);
+  transition: clip-path 2s cubic-bezier(0.19, 1, 0.22, 1);
+  transition: clip-path 2s cubic-bezier(0.19, 1, 0.22, 1), -webkit-clip-path 2s cubic-bezier(0.19, 1, 0.22, 1);
+  transition-delay: 0s;
+}
+
+._lordSlideImgUpSec.is-active {
+  -webkit-clip-path: inset(0 -20% 0 0);
+          clip-path: inset(0 -20% 0 0);
+}
+
+/*　画面ロード時、左から右に画像表示　*/
+._lordSlideImgLeft {
+  -webkit-clip-path: inset(0 100% -20% 0);
+          clip-path: inset(0 100% -20% 0);
+  transition: -webkit-clip-path 2s cubic-bezier(0.19, 1, 0.22, 1);
+  transition: clip-path 2s cubic-bezier(0.19, 1, 0.22, 1);
+  transition: clip-path 2s cubic-bezier(0.19, 1, 0.22, 1), -webkit-clip-path 2s cubic-bezier(0.19, 1, 0.22, 1);
+  transition-delay: 0s;
+}
+
+._lordSlideImgLeft.is-active {
+  -webkit-clip-path: inset(0 -20% 0 0);
+          clip-path: inset(0 -20% 0 0);
+}
+
+/* CHEESE・TART　縦書きの文字を一文字ずつ表示する */
+.js-textSlideDown {
+  -webkit-animation-name: slideTextY100;
+          animation-name: slideTextY100;
+  -webkit-animation-duration: 0.8s;
+          animation-duration: 0.8s;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+  opacity: 0;
+}
+
+@-webkit-keyframes slideTextY100 {
+  from {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideTextY100 {
+  from {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+.js-textSlide {
+  -webkit-animation-name: slideTextY-100;
+          animation-name: slideTextY-100;
+  -webkit-animation-duration: 0.8s;
+          animation-duration: 0.8s;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+  opacity: 0;
+}
+
+@-webkit-keyframes slideTextY-100 {
+  from {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideTextY-100 {
+  from {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+/* passion項目の文字を一文字ずつ表示する */
+.slideAnimeLeft {
+  -webkit-animation-name: slideTextX100;
+          animation-name: slideTextX100;
+  -webkit-animation-duration: 0.8s;
+          animation-duration: 0.8s;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+  opacity: 0;
+}
+
+@-webkit-keyframes slideTextX100 {
+  from {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideTextX100 {
+  from {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+.slideAnimeRight {
+  -webkit-animation-name: slideTextX-100;
+          animation-name: slideTextX-100;
+  -webkit-animation-duration: 0.8s;
+          animation-duration: 0.8s;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+  opacity: 0;
+}
+
+@-webkit-keyframes slideTextX-100 {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideTextX-100 {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+/* 文字をフェードインさせる */
+.js-fadeIn {
+  -webkit-animation-name: fadeInAnime;
+          animation-name: fadeInAnime;
+  -webkit-animation-duration: 2s;
+          animation-duration: 2s;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+  opacity: 0;
+}
+
+@-webkit-keyframes fadeInAnime {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeInAnime {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+.p-menu__langGroup.js-active {
+  display: block;
+  transition-duration: 3s;
+}
+
+.p-menu__shopLink.js-toHide {
+  transform: translateY(-204%);
+}
+
+.fa-caret-down.js-revolving {
+  transform: rotate(180deg);
+}/*# sourceMappingURL=js.css.map */
