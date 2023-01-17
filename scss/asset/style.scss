@@ -2247,6 +2247,10 @@ div.l-header__langIcon p.js-backColor {
         font-size: 34px;
     }
 
+    &__list li a:hover {
+        opacity: 0.8;
+    }
+
     &__item {
         padding-left: 25px;
     }

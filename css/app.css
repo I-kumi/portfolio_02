@@ -1835,6 +1835,9 @@ div.l-header__langIcon p.js-backColor {
   color: #fff;
   font-size: 34px;
 }
+.l-footer__list li a:hover {
+  opacity: 0.8;
+}
 .l-footer__item {
   padding-left: 25px;
 }
