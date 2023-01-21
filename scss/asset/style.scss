@@ -26,8 +26,15 @@ div.l-header__langIcon p.js-backColor {
 
 .p-hero:before {
     display: block;
-    padding-top: 150%;
+    padding-top: 141%;
     content: '';
+}
+
+@media screen and (min-width: 320px) and (max-width: 767px) {
+    .p-hero:before {
+        padding-top: 378%;
+    }
+
 }
 
 .p-hero__container {
@@ -121,7 +128,7 @@ div.l-header__langIcon p.js-backColor {
     }
 
     &__box img {
-        width: 10%;
+        width: 12vw;
         height: 100%;
         object-fit: cover;
         pointer-events: all;
@@ -148,16 +155,50 @@ div.l-header__langIcon p.js-backColor {
     content: '';
 }
 
-
-/*  main */
 .l-main {
     &__inner {
         padding: 0 90px;
         max-width: 1260px;
     }
+}
 
-    &__img {
+@media screen and (min-width: 320px) and (max-width: 767px) {
+
+    .l-main {
+
+        &__inner {
+            padding: 0px;
+        }
+    }
+}
+
+
+/*  main */
+.p-main {
+
+    &_yellow {
+        z-index: 20;
+    }
+
+    &__imgPc {
         position: relative;
+    }
+
+    &__imgSp {
+        display: none;
+    }
+
+    &__imgBox1 {
+        z-index: 10;
+    }
+
+    &__imgYellowBox1 {
+        z-index: 10;
+    }
+
+    &__imgBox2 {
+        position: absolute;
+        top: 80%;
     }
 
     &__img1 {
@@ -165,7 +206,7 @@ div.l-header__langIcon p.js-backColor {
         width: 100%;
         height: auto;
         object-fit: cover;
-        clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 87%);
+        clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 81%);
     }
 
     &__imgYellowBox {
@@ -178,19 +219,14 @@ div.l-header__langIcon p.js-backColor {
         width: 100%;
         height: auto;
         object-fit: cover;
-        clip-path: polygon(52% 0%, 0% 0%, 0% 100%);
-    }
-
-    &__imgBox2 {
-        position: absolute;
-        top: 80%;
+        clip-path: polygon(42% 0%, 0% 0%, 0% 100%, 9% 100%)
     }
 
     &__img2 {
         width: 100%;
         height: auto;
         object-fit: cover;
-        clip-path: polygon(0% 7%, 225% 41%, 0% 85%, 0% 100%);
+        clip-path: polygon(0% 0%, 194% 43%, 0% 95%, 0% 0%);
     }
 
     &__imgYellow2 {
@@ -198,20 +234,45 @@ div.l-header__langIcon p.js-backColor {
         width: 100%;
         height: auto;
         object-fit: cover;
-        clip-path: polygon(0% 7%, 0% 85%, 51% 75%, 13% 9%);
+        clip-path: polygon(0% 0%, 0% 95%, 52% 81%, 18% 4%);
     }
 }
 
-@media only screen and (min-device-width: 320px) and (max-width: 767px) {
 
-    .l-main {
+/* SPサイズ--p-main */
+@media screen and (min-width: 320px) and (max-width: 767px) {
+
+    .p-main {
 
         &__inner {
             padding: 0px;
         }
+
+        &__imgPc {
+            display: none;
+
+        }
+
+        &__imgSp {
+            display: block;
+            position: relative;
+        }
+
+        &__img2 {
+            clip-path: polygon(0% 0%, 229% 45%, 0% 86%, 0% 100%);
+        }
+
+
+        &__imgYellow1 {
+            clip-path: polygon(60% 0%, 0% 0%, 0% 100%, 0% 80%);
+        }
+
+        &__imgYellow2 {
+            clip-path: polygon(0% 0%, 0% 86%, 56% 76%, 0% 21%);
+        }
+
     }
 }
-
 
 
 
@@ -271,19 +332,34 @@ div.l-header__langIcon p.js-backColor {
 
 }
 
-
-
 .p-memory:before {
     display: block;
     padding-top: 81.25%;
     content: '';
 }
 
+@media screen and (min-width: 320px) and (max-width: 767px) {
 
+    .p-memory {
 
+        &__container {
+            font-size: 4.8vw;
+        }
 
+        &__container h2 {
+            font-size: 6.4vw;
+        }
 
+        &__body {
+            font-size: 3.73333vw;
+        }
 
+    }
+
+    .p-memory:before {
+        padding-top: 153%;
+    }
+}
 
 /*  menu */
 .p-menu {
@@ -313,6 +389,15 @@ div.l-header__langIcon p.js-backColor {
         color: #fff;
         text-transform: uppercase;
         white-space: nowrap;
+        padding: 0 32px;
+        height: 56px;
+        line-height: 56px;
+        font-size: 16px;
+    }
+
+    &__country ul {
+        display: inline-block;
+        vertical-align: top;
     }
     &__btn a:hover {
         background-color: #333;
@@ -323,8 +408,7 @@ div.l-header__langIcon p.js-backColor {
         top: 0;
         right: 0;
         display: none;
-        // opacity: 0;
-        // visibility: hidden;
+        padding: 56px 28px 28px 28px;
         white-space: nowrap;
     }
 
@@ -342,12 +426,21 @@ div.l-header__langIcon p.js-backColor {
         z-index: 10;
     }
 
+    &__wrapper ul {
+        display: inline-block;
+        vertical-align: top;
+    }
+
     &__wrapper ul a {
         display: block;
         color: #fff;
         text-transform: uppercase;
         white-space: nowrap;
         pointer-events: all;
+        padding: 0 14px;
+        height: 40px;
+        line-height: 40px;
+        font-size: 16px;
     }
 
     &__langChoice a.is-jp {
@@ -357,6 +450,9 @@ div.l-header__langIcon p.js-backColor {
 
     &__langChoice a.icon {
         position: relative;
+        top: 2px;
+        margin-right: 0.5em;
+        font-size: 18px;
     }
 
     &__navLabel {
@@ -424,43 +520,9 @@ div.l-header__langIcon p.js-backColor {
     }
 }
 
-@media only screen and (min-width: 768px) {
+@media screen and (min-width: 320px) and (max-width: 767px) {
 
     .p-menu {
-        &__btn a {
-            padding: 0 32px;
-            height: 56px;
-            line-height: 56px;
-            font-size: 16px;
-        }
-
-        &__langGroup {
-            padding: 56px 28px 28px 28px;
-        }
-
-        &__wrapper ul {
-            display: inline-block;
-            vertical-align: top;
-        }
-
-        &__wrapper ul a {
-            padding: 0 14px;
-            height: 40px;
-            line-height: 40px;
-            font-size: 16px;
-        }
-
-        &__langChoice a .icon {
-            top: 2px;
-            margin-right: 0.5em;
-            font-size: 18px;
-            position: relative;
-        }
-
-        &__country ul {
-            display: inline-block;
-            vertical-align: top;
-        }
     }
 }
 
@@ -471,7 +533,7 @@ div.l-header__langIcon p.js-backColor {
     &__cheese {
         margin-top: -4.166666667vw;
         position: relative;
-        width: 100%;
+        width: 80vw;
     }
 
     &__cheese:before {
@@ -485,23 +547,16 @@ div.l-header__langIcon p.js-backColor {
         padding: 20px 20px;
     }
 
-    &__cheese h2, &__tart h2 {
-        position: absolute;
-        padding: 35px 40px;
-        z-index: 10;
-        overflow: hidden;
-        line-height: 1;
-        mix-blend-mode: multiply;
-    }
-
     &__cheese h2 {
-        top: 100px;
-        left: 330px;
-        font-size: 26px;
+        top: 6vw;
+        font-size: 1.888vw;
+        left: 22.44444vw;
     }
 
     &__tart h2 {
-        font-size: 26px;
+        top: 0;
+        font-size: 1.888vw;
+        right: 20.333333vw;
     }
 
     &__cheeseContainer, &__tartContainer {
@@ -511,13 +566,13 @@ div.l-header__langIcon p.js-backColor {
         bottom: 0;
         left: 0;
     }
-
     &__cheeseContainer h2, &__tartContainer h2 {
         position: absolute;
         z-index: 10;
-        overflow: hidden;
         width: 1em;
+        overflow: hidden;
         text-align: center;
+        padding: 3vw 3.8vw;
         line-height: 1;
         mix-blend-mode: multiply;
     }
@@ -526,7 +581,18 @@ div.l-header__langIcon p.js-backColor {
         position: absolute;
         text-align: justify;
         line-height: 1.666666667;
-        font-size: 18px;
+        font-size: 1.26vw;
+        width: 55.793651%;
+    }
+
+    &__cheeseDescription {
+        bottom: -3vw;
+        left: 12.571429%;
+    }
+
+    &__tartDescription {
+        bottom: -3vw;
+        left: 31.571429%;
     }
 
     &__cheeseSvg {
@@ -538,7 +604,7 @@ div.l-header__langIcon p.js-backColor {
         position: relative;
         z-index: 10;
         font-weight: 400;
-        margin-top: 150px;
+        margin-top: 20%;
     }
 
     &__tart:before {
@@ -564,14 +630,8 @@ div.l-header__langIcon p.js-backColor {
     }
 
     &__cheeseTitle, &__tartTitle {
-        font-size: 180px;
-        letter-spacing: 0.08em;
-        font-family: "courier",sans-serif;
-    }
-
-    &__cheeseText, &__tartText {
-        font-size: 23px;
-        overflow: hidden;
+        font-size: 14.222vw;
+        letter-spacing: 0.06em;
     }
 
     &__cheeseTitle, &__cheeseText, &__tartTitle, &__tartText {
@@ -583,37 +643,43 @@ div.l-header__langIcon p.js-backColor {
     }
 
     &__cheeseTitle {
-        right: 120px;
+        right: 6.77777vw;
     }
 
     &__cheeseText {
-        right: 25px;
+        right: 2.3333vw;
+        font-size: 2.1111vw;
     }
 
-    &__tartTitle, &__tartText {
-        left: 0px;
+    &__tartTitle {
+        top: 25%;
+        left: -0.4vw;
     }
 
-    &__cheeseContainer img, &__tartContainer img {
-        width: 700px;
-        height: auto;
-        object-fit: cover;
+    &__tartText {
+        top: 25%;
+        left: -1.444vw;
+        font-size: 2.1111vw;
     }
 
     &__cheeseContainer img {
         position: absolute;
-        top: 120px;
-        right: 220px;
+        top: 20%;
+        width: 53%;
+        height: auto;
+        right: 15.999999%;
     }
 
     &__tartContainer img {
         position: absolute;
-        top: 90px;
-        right: 350px;
+        top: 11%;
+        width: 52%;
+        height: auto;
+        right: 30.999999%;
     }
 }
 
-@media only screen and (min-device-width: 320px) and (max-width: 767px) {
+@media screen and (min-width: 320px) and (max-width: 767px) {
 
     .p-material {
 
@@ -622,148 +688,165 @@ div.l-header__langIcon p.js-backColor {
             max-width: 100%;
         }
 
-        &__cheese {
-            margin-top: -8vw;
+        &__inner br {
+            display: none;
         }
 
-        &__cheeseContainer img {
-            width: 100%;
-            height: auto;
+        &__cheese {
+            margin-top: -4.166666667vw;
+            position: relative;
+            width: 80vw;
+        }
+    
+        &__cheese:before {
+            display: block;
+            padding-top: 58.80952381%;
+            content: '';
+        }
+    
+        &__cheese h2, &__tart h2 {
+            writing-mode: vertical-rl;
+            padding: 20px 20px;
+        }
+    
+        &__cheese h2 {
+            top: 27vw;
+            font-size: 3.888vw;
+            left: 0;
+            padding: 4vw 9vw;
+            height: 45vw;
+        }
+    
+        &__tart h2 {
+            top: 23vw;
+            font-size: 2.888vw;
+            height: 32vw;
             right: 0;
         }
-
-        &__tartContainer img {
-            width: 94%;
-            height: auto;
-            right: 18px;
+    
+        &__cheeseContainer, &__tartContainer {
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
         }
 
-        &__cheese {
-            margin-top: 16vw;
+        &__cheeseContainer h2, &__tartContainer h2 {
+            position: absolute;
+            z-index: 10;
+            width: 1em;
+            overflow: hidden;
+            text-align: center;
+            line-height: 1;
+            mix-blend-mode: multiply;
         }
 
-        &__tart {
-            padding-top: 42px;
-            margin-top: 32vw;
+        &__cheeseContainer h2 {
+            padding: 2vw 7.8vw;
         }
 
-
-        &__cheeseTitle,&__tartTitle {
-            font-size: 75px;
-            letter-spacing: 0.08em;
-        }
-
-        &__cheese {
-            padding-bottom: 200px;
-        }
-
-        &__cheese h2, &__tart h2 {
-            padding: 37px 37px;
-        }
-
-        &__cheese h2 {
-            font-size: 20px;
-            left: 0px;
-        }
-
-        &__tart h2 {
-            font-size: 13px;
-            right: 0px;
-        }
-
-        &__cheeseTitle, &__cheeseText {
-            right: 0px;
-        }
-
-        &__tartTitle, &__tartText {
-            left: 0px;
+        &__tartContainer h2 {
+            padding: 4vw 7.8vw;
         }
 
         &__cheeseDescription {
-            top: 600px;
+            bottom: -41vw;
+            left: 34.571429%;
+            font-size: 2.9vw;
+            width: 73.112222%;
         }
-
-        &__cheeseDescription, &__tartDescription {
-            top: 114.13333vw;
-            left: 28.66667vw;
-            width: 63.33333vw;
-            letter-spacing: 0.04em;
-            font-size: 3.2vw;
+    
+        &__tartDescription {
+            bottom: -34vw;
+            left: 10.571429%;
+            font-size: 2.9vw;
+            width: 63.112222%;
         }
-
-        &__cheese :before {
-            padding-top: 129.066666667%;
-        }
-
-    }
-
-}
-
-@media only screen and (min-width: 768px) {
-    .p-material {
-        
-        &__cheeseDescription, &__tartDescription {
-            top: 712px;
-            left: 13.571428571%;
-            width: 50.793650794%;
-        }
-
-        &__tart h2 {
-            top: 0;
-            left: 70%;
-            padding: 40px 45px;
-        }
-
-        &__cheese h2 {
-            top: 5%;
-            left: 23%;
-            padding: 40px 45px;
-        }
-        
-    }
-
-}
-
-
-
-@media only screen and (min-width: 768px) and (max-width: 1440px){
-
-    .p-material {
-
-        &__cheese {
-            padding-bottom: 300px;
-        }
-
-        &__cheeseContainer img {
+    
+        &__cheeseSvg {
             width: 100%;
             height: auto;
-            right: 0;
         }
-
+    
+        &__tart {
+            margin-top: 65%;
+        }
+    
+        &__tart:before {
+            display: block;
+            padding-top: 52.222222222%;
+            content: '';
+        }
+    
+        &__cheese h2 span ,&__tart h2 span {
+            position: relative;
+            z-index: 10;
+            font-weight: 400;
+        }
+    
+        &__cheeseBox {
+            top: 20px;
+            right: 100px;
+        }
+    
+        &__tartBox {
+            top: 120px;
+            left: 70px;
+        }
+    
+        &__cheeseTitle, &__tartTitle {
+            font-size: 23vw;
+        }
+    
+        &__cheeseTitle, &__cheeseText, &__tartTitle, &__tartText {
+            position: absolute;
+            color: gold;
+            writing-mode: vertical-rl;
+            mix-blend-mode: multiply;
+            font-family: "courier",sans-serif;
+        }
+    
+        &__cheeseTitle {
+            right: -20.1vw;
+            top: -25vw;
+        }
+    
+        &__cheeseText {
+            right: -20vw;
+            font-size: 4.1111vw;
+            height: 83vw;
+            top: -24vw;
+        }
+    
+        &__tartTitle {
+            top: -10vw;
+            left: -11vw;
+        }
+    
+        &__tartText {
+            top: -9vw;
+            left: -2vw;
+            font-size: 4.1111vw;
+            height: 82vw;
+        }
+    
+        &__cheeseContainer img {
+            width: 70vw;
+            height: 57vw;
+            object-fit: cover;
+            right: -5vw;
+        }
+    
         &__tartContainer img {
-            width: 94%;
-            height: auto;
-            right: 0;
+            width: 70vw;
+            height: 57vw;
+            object-fit: cover;
+            right: 15vw;
         }
 
-        &__cheeseTitle, &__cheeseText {
-            right: -50px;
-        }
-
-        &__cheese h2 {
-            font-size: 20px;
-            left: 0px;
-        }
-
-        &__tart h2 {
-            font-size: 13px;
-            right: 0px;
-        }
-
-        &__tartTitle, &__tartText {
-            left: -121px;
-        }
     }
+
 }
 
 /*  price */
@@ -775,7 +858,6 @@ div.l-header__langIcon p.js-backColor {
     width: 100%;
 
     &__container {
-        // position:relative;
         position: absolute;
         top: 0;
         right: 0;
@@ -790,6 +872,7 @@ div.l-header__langIcon p.js-backColor {
         display: table;
         width: 100%;
         height: 100%;
+        padding-top: 14vw;
     }
 
     &__main {
@@ -798,67 +881,80 @@ div.l-header__langIcon p.js-backColor {
         text-align: center;
     }
 
-    &__wrapper {
-        position: relative;
-        display: inline-block;
-        max-width: 1260px;
-        width: 100%;
-    }
-
-    &__wrapper header {
-        padding-right: 4.285714286%;
+    &__title {
+        font-size: 7.33333vw;
         text-align: right;
-        display: block;
-    }
-
-    &__wrapper footer {
-        text-align: left;
         padding: 0 90px;
-        max-width: 100%;
+        font-family: "courier",sans-serif;
     }
 
-    &__content {
-        position: relative;
-        width: 100%;
-        height: 100%;
-        letter-spacing: 0.08em;
-    }
-
-    &__backImgBox {
-        position: relative;
-        width: 100%;
+    &__contentInner {
         display: flex;
+        justify-content: center;
+        margin-top: 15vw;
     }
 
-    &__backImgBox:before {
-        padding-top: 57.142857143%;
+    &__contentItem {
+        position: relative;
+        width: 32vw;
+        margin-left: 10vw;
+        margin-top: 10vw;
+    }
+
+    &__contentItem:first-child {
+        margin-left: 0;
+        margin-top: 0;
+    }
+
+    &__contentImage {
+        width: 100%;
+    }
+
+    &__content h3, &__content h4 {
+        position: absolute;
+        overflow: hidden;
+    }
+
+    &__content h3 {
+        top: -2vw;
+        left: -2vw;
+    }
+
+    &__text1 {
+        bottom: 6vw;
+        right: -3vw;
+    }
+
+    &__text6 {
+        bottom: -5vw;
+        right: -3vw;
+    }
+
+    &__content h3 p, &__content h4 p {
+        position: relative;
+        z-index: 10;
         display: block;
-        content: '';
+        color: #fff;
+        line-height: 1;
     }
 
-    &__backImg {
-        position: absolute;
-        top: 0;
-        right: 0;
-        bottom: 0;
-        left: 0;
+    &__content h3 p {
+        padding: 1.4vw 3vw;
+        font-size: 1.6vw;
     }
 
-    &__peaceImg1, &__peaceImg6 {
-        width: 40%;
-        height: auto;
-        object-fit: cover;
-        position: absolute;
+    &__content h4 p {
+        padding: 2vw 4vw;
+        font-size: 2.8vw;
     }
 
-    &__peaceImg1 {
-        top: 15px;
-        left: 20px;
+    &__content h3 span {
+        font-size: 2.222vw;
     }
 
-    &__peaceImg6 {
-        top: 240px;
-        right: 30px;
+    &__content h4 span {
+        font-size: 1.5vw;
+        padding-left: 10px;
     }
 
     &__svg {
@@ -866,144 +962,39 @@ div.l-header__langIcon p.js-backColor {
         height: 100%;
     }
 
-
     &__svgSp {
         display: none;
     }
 
-    &__content h3 {
-        position: absolute;
-        overflow: hidden;
-    }
-
-    &__content h3 span {
-        position: relative;
-        z-index: 10;
-        display: block;
-        color: #fff;
-        text-transform: uppercase;
-        line-height: 1;
-        font-size: 20px;
-
-    }
-
-
-    &__icon6 h3 {
-        position: absolute;
-        overflow: hidden;
-    }
-
-
-    &__box1, &__box6 {
-        position: absolute;
-        overflow: hidden;
-    }
-
-    &__box1 i, &__box6 i {
-        position: relative;
-        z-index: 10;
-        display: block;
-        color: #fff;
-        font-style: normal;
-        line-height: 1;
-        font-size: 36px;
-    }
-
-    &__box1 i span {
-        font-size: 44.444444444%;
-    }
-
     &__box3 {
         text-align: left;
-        font-size: 1.14286rem;
+        font-size: 1.2vw;
         padding: 0 90px;
         max-width: 1260px;
         margin: 0 auto;
         display: block;
+        line-height: 1.75;
     }
 
 }
 
 .p-price:before {
     display: block;
-    padding-top: 113.194444444%;
+    padding-top: 91.194444%;
     content: '';
 }
 
-@media only screen and (min-width: 768px) {
+@media screen and (min-width: 320px) and (max-width: 767px) {
     .p-price {
+        margin-top: 37.13333vw;
 
-        &__wrapper header {
-            padding-right: 0.285714%;
-            text-align: right;
-            margin-bottom: 3.055555556vw;
-            font-size: 135px;
-            font-family: "courier",sans-serif;
-        }
-
-        &__content h3 span {
-            padding: 1em 1.4em 1em 1.4em;
-        }
-
-        &__box1 {
-            top: 60%;
-            right: 46.968254%;
-        }
-
-        &__box1 i, &__box6 i {
-            padding: 0.833333333em 1em;
-        }
-
-        &__icon1 h3 {
-            top: 0;
-            left: 5%;
-        }
-
-        &__icon6 h3 {
-            top: 25%;
-            left: 54.761904762%;
-        }
-
-        &__box6 {
-            right: 1.968254%;
-            bottom: 0;
+        &__inner {
+            padding-top: 50vw;
         }
 
         &__box3 {
-            line-height: 1.75;
-        }
-    }
-}
-
-
-
-@media only screen and (min-device-width: 320px) and (max-width: 767px) {
-    .p-price {
-        margin-top: 14.13333vw;
-
-        &__content {
-            top: 0;
-            left: 0;
-            bottom: 60px;
-        }
-
-        &__container {
-            position: relative;
-        }
-
-        &__wrapper {
-            top: 200px;
-            left: 0;
-        }
-
-        &__wrapper header {
-            margin-bottom: 16vw;
-            text-align: center;
-            font-size: 13.33333vw;
-        }
-
-        &__backImg {
-            display: block;
+            font-size: 2.7vw;
+            padding-top: 25vw;
         }
 
         &__svg {
@@ -1016,67 +1007,81 @@ div.l-header__langIcon p.js-backColor {
             height: 100%;
         }
 
-        &__peaceImg1, &__peaceImg6 {
-            width: 50%;
-            height: auto;
+        &__title {
+            font-size: 13.33333vw;
+            text-align: center;
         }
 
-        &__peaceImg1 {
-            top: 150px;
-            left: 46px;
+        &__contentInner {
+            display: block;
         }
 
-        &__peaceImg6 {
-            top: 500px;
-            right: 0;
-            left: 80px;
-            bottom: 0;
+        &__content {
+            display: flex;
+            justify-content: center;
+            margin-top: 15vw;
+
+        }
+
+        &__contentItem {
+            position: relative;
+            width: 60vw;
+            margin-top: 35vw;
+        }
+
+        &__contentItem:first-child {
+            margin-top: 0;
+        }
+
+        &__contentImage {
+            width: 100%;
+        }
+
+        &__contentTitle span {
+            color: white;
+            font-size: 3.73333vw;
+            z-index: 10;
+        }
+
+        &__content h3, &__content h4 {
+            position: absolute;
+            overflow: hidden;
+        }
+
+        &__content h3 {
+            top: -5vw;
+            left: -5vw;
+        }
+
+        &__content h4 {
+            bottom: -5vw;
+            right: -8vw;
+        }
+
+        &__content h3 p, &__content h4 p {
+            position: relative;
+            z-index: 10;
+            display: block;
+            color: #fff;
+            line-height: 1;
+        }
+
+        &__content h3 p {
+            padding: 3.4vw 6vw;
+            font-size: 3.6vw;
+        }
+
+        &__content h4 p {
+            padding: 4vw 5vw;
+            font-size: 3.38889vw;
         }
 
         &__content h3 span {
-            padding: 3.73333vw 4.8vw;
-            font-size: 3.73333vw;
+            font-size: 2.222vw;
         }
 
-        &__box1 {
-            left: 339px;
-            bottom: -410px;
-        }
-
-        &__box6 {
-            bottom: -715px;
-            right: 0;
-        }
-
-        &__box1 i, &__box6 i {
-            padding: 5.6vw 6.93333vw;
-            font-size: 5.33333vw;
-        }
-
-        &__icon1 h3 {
-            top: 120px;
-            left: 20px;
-        }
-
-        &__icon6 h3 {
-            top: 103.33333vw;
-            left: 11.33333vw;
-        }
-
-        &__icon1 h3 span {
-            padding: 1em 1.4em 1em 1.4em;
-        }
-
-        &__icon6 h3 span {
-            padding: 3.73333vw 4.8vw;
-            font-size: 3.73333vw;
-        }
-
-        &__box3 {
-            margin-top: 21.33333vw;
-            font-size: 2.66667vw;
-            line-height: 1.8;
-            padding: 0 8vw;
+        &__content h4 span {
+            font-size: 2.222vw;
         }
     }
 
@@ -1086,58 +1091,19 @@ div.l-header__langIcon p.js-backColor {
 }
 
 
-@media only screen and (min-width: 768px) and (max-width: 1440px){
-    .p-price {
-        margin-top: 35.25vw;
-
-        &__wrapper header h2 {
-            font-size: 6.94444vw;
-        }
-
-        &__content h3 span {
-            font-size: 1.38889vw;
-        }
-
-        &__box1 i, &__box1 i span, &__box6, &__box6 i span {
-            font-size: 2.5vw;
-        }
-
-        &__peaceImg1 {
-            top: 15px;
-            left: 60px;
-        }
-
-        &__peaceImg6 {
-            top: 140px;
-            right: 28px;
-        }
-
-        &__box3 {
-            font-size: 1.11111vw;
-        }
-    }
-}
-
-
-
-
-
 /*  eat  */
 .p-eat {
     position: relative;
     background-color: gold;
 
     &__inner {
-        padding: 0 50px;
-        max-width: 100%;
-        height: 95vh;
-        padding-top: 80px;
+        padding: 18vw 5vw 0 5vw;
     }
 
     &__inner header p {
         letter-spacing: 0.08em;
         line-height: 1.78;
-        font-size: 1.71429rem;
+        font-size: 2vw;
         letter-spacing: 0.08em;
         line-height: 1.78;
     }
@@ -1149,7 +1115,7 @@ div.l-header__langIcon p.js-backColor {
     }
 
     &__step ul {
-        margin: 0 -2.08333vw;
+        margin: 0 -30px;
     }
 
     &__step ul :after {
@@ -1159,24 +1125,23 @@ div.l-header__langIcon p.js-backColor {
     }
 
     &__step ul li {
+        padding: 0 30px;
+        width: 25%;
         position: relative;
         float: left;
         counter-increment: steps;
-    }
-
-    &__step li {
-        padding: 0 2.08333vw;
+        box-sizing: border-box;
     }
 
     &__steps ul li p {
+        margin-top: 20px;
         line-height: 1.75;
+        font-size: 1vw;
     }
 
     &__stepBox {
         position: relative;
-        opacity: 1;
-        transform: translateY(0%);
-        padding: 3.05556vw 0 0 3.05556vw;
+        padding: 2.9vw 0 0 3.7vw;
     }
 
     &__stepBox:before {
@@ -1184,24 +1149,14 @@ div.l-header__langIcon p.js-backColor {
         top: 10px;
         left: 0;
         display: block;
-        width: 60px;
-        height: 60px;
+        width: 4.666vw;
+        height: 4.4vw;
         background-color: #000;
         color: #fff;
         content: counter(steps);
         text-align: center;
-        line-height: 60px;
-        font-size: 24px;
-    }
-
-    &__stepBox img {
-        width: 173px;
-        height: auto;
-    }
-
-    &__stepBox p {
-        margin-top: 10px;
-        font-size: 16px;
+        line-height: 4.5vw;
+        font-size: 1.8vw;
     }
 
     &__stepBox span {
@@ -1210,13 +1165,23 @@ div.l-header__langIcon p.js-backColor {
         display: block;
         color: #fff;
         letter-spacing: 0.08em;
-        font-size: 40px;
+        font-size: 4vw;
         font-family: "courier",sans-serif;
     }
 
+    &__stepBox img {
+        width: 13vw;
+        height: auto;
+    }
+
+    &__stepBox p {
+        margin-top: 30px;
+        font-size: 1.1vw;
+    }
+
     &__stepBox h3 {
-        margin-bottom: 5px;
-        font-size: 20px;
+        margin-bottom: 25px;
+        font-size: 1.8vw;
     }
 
     &__step ul li:nth-child(2) {
@@ -1233,46 +1198,40 @@ div.l-header__langIcon p.js-backColor {
 
     &__stepText {
         clear:both;
-        font-size: 16px;
+        font-size: 1vw;
+        position: absolute;
+        top: 0;
+        left: 50%;
+        padding-left: 30px;
+        width: 50%;
+        line-height: 1.75;
+    }
+
+    &__step ul:after {
+        content: "";
+        display: table;
+        clear: both;
     }
 }
 
-@media only screen and (min-width: 768px) {
-    .p-eat {
-        margin-top: -18.75vw;
-        padding-top: 12.5vw;
-        padding-bottom: 2.08333vw;
-
-        &__step ul li {
-            width: 20%;
-            padding: 0 2.08333vw;
-        }
-
-        &__stepText {
-            position: absolute;
-            top: 0;
-            left: 50%;
-            width: 50%;
-            line-height: 1.75;
-            box-sizing: border-box;
-        }
-    }
+img.p-eat__imgTarte {
+    width: 16vw;
 }
 
-@media only screen and (min-device-width: 320px) and (max-width: 767px) {
+@media screen and (min-width: 320px) and (max-width: 767px) {
     .p-eat {
         margin-top: -14.93333vw;
         padding-bottom: 16vw;
 
         &__inner {
-            height: 116vh;
-            padding-top: 80px;
+            padding: 14vw 5vw 0 6vw;
         }
 
         &__inner header p {
             font-size: 3.7vw;
             line-height: 2;
-            padding-top: 80px;
+            padding-top: 24vw;
+            margin-left: 5vw;
         }
 
         &__text p {
@@ -1290,7 +1249,7 @@ div.l-header__langIcon p.js-backColor {
 
         &__step ul li {
             padding: 0 4vw;
-            width: 40%;
+            width: 50%;
         }
 
         &__stepBox {
@@ -1308,9 +1267,9 @@ div.l-header__langIcon p.js-backColor {
         }
 
         &__stepBox p {
-            margin-top: 4vw;
-            font-size: 2.0vw;
-            line-height: 1.666666667;
+            font-size: 2.9vw;
+            letter-spacing: 0.08em;
+            line-height: 2;
         }
 
         &__step ul li:nth-child(2) {
@@ -1326,10 +1285,12 @@ div.l-header__langIcon p.js-backColor {
         }
 
         &__stepText {
-            font-size: 2.66667vw;
+            font-size: 2.5vw;
             line-height: 1.8;
-            padding-top: 39px;
-            clear:both;
+            margin-top: 16vw;
+            position: initial;
+            width: 100%;
+            padding-left: 0;
         }
 
         &__stepBox:before {
@@ -1340,7 +1301,7 @@ div.l-header__langIcon p.js-backColor {
         }
 
         &__stepBox img {
-            width: 110px;
+            width: 100%;
         }
 
         &__stepBox:before {
@@ -1351,53 +1312,15 @@ div.l-header__langIcon p.js-backColor {
         }
     }
 
+    img.p-eat__imgTarte {
+        width: 110%;
+    }
+
     .p-eat header {
         margin-bottom: 16vw;
     }
 }
 
-@media only screen and (min-width: 768px) and (max-width: 1440px) {
-    .p-eat {
-
-        &__inner header p {
-            font-size: 1.66667vw;
-        }
-
-        &__step ul {
-            margin: 0 -2.08333vw;
-        }
-
-        &__steps ul li {
-            padding: 0 2.08333vw;
-        }
-
-        &__stepBox {
-            padding: 3.05556vw 0 0 3.05556vw;
-        }
-
-        &__steps ul li p {
-            margin-top: 1.38889vw;
-            font-size: 1.11111vw;
-        }
-
-        &__steps ul li:nth-child(2) {
-            margin-top: 4.16667vw;
-        }
-
-        &__step ul li:nth-child(3) {
-            margin-top: 8.33333vw;
-        }
-
-        &__step ul li:nth-child(4) {
-            margin-top: 12.5vw;
-        }
-
-        &__stepText {
-            padding-left: 2.08333vw;
-            font-size: 1.11111vw;
-        }
-    }
-}
 
 /*  passion  */
 .p-passion {
@@ -1430,11 +1353,11 @@ div.l-header__langIcon p.js-backColor {
     }
 
     &__design {
-        left: 0;
+        left: -5vw;
     }
 
     &__text1 {
-        padding: 30px 55px;
+        padding: 3.33333vw 5.55556vw;
         position: relative;
         display: inline-block;
         overflow: hidden;
@@ -1445,6 +1368,7 @@ div.l-header__langIcon p.js-backColor {
         position: relative;
         z-index: 10;
         display: block;
+        font-size: 3.33333vw;
     }
 
     &__text2 {
@@ -1452,7 +1376,7 @@ div.l-header__langIcon p.js-backColor {
     }
 
     &__philosophyList, &__designList {
-        width: 720px;
+        width: 50vw;
     }
 
     &__designList {
@@ -1493,13 +1417,13 @@ div.l-header__langIcon p.js-backColor {
     }
 
     &__itemTitle1, &__itemTitle2, &__itemTitle3 {
-        padding: 30px 50px;
-        font-size: 22px;
+        padding: 2.77778vw 3.88889vw;
+        font-size: 1.66667vw;
     }
 
 
     &__itemMain, &__itemMain2 {
-        width: 500px;
+        width: 43.75vw;
         height: 100%;
         position: relative;
         max-width: 720px;
@@ -1507,8 +1431,8 @@ div.l-header__langIcon p.js-backColor {
     }
 
     &__itemMain img, &__itemMain2 img {
-        width: 100%;
-        height: 110px;
+        width: 45vw;
+        height: 11vw;
         position: relative;
         max-width: 720px;
         object-fit: cover;
@@ -1541,7 +1465,7 @@ div.l-header__langIcon p.js-backColor {
         line-height: 1.111111111;
         transform: translateZ(0);
         backface-visibility: hidden;
-        font-size: 120px;
+        font-size: 8.75vw;
         margin-left: 40px;
         font-family: "courier",sans-serif;
 
@@ -1554,8 +1478,8 @@ div.l-header__langIcon p.js-backColor {
     &__textBox p {
         position: absolute;
         top: 60%;
-        left: 50%;
-        font-size: 20px;
+        left: 55%;
+        font-size: 1.66667vw;
         margin: -47% 0 0 -25%;
         padding-top: 1.6em;
         text-align: left;
@@ -1599,29 +1523,45 @@ div.l-header__langIcon p.js-backColor {
 }
 
 
-@media only screen and (min-device-width: 320px) and (max-width: 767px) {
+@media screen and (min-width: 320px) and (max-width: 767px) {
     .p-passion {
 
-        padding-top: 29.33333vw;
+        padding-top: 21.33333vw;
+
+        &__philosophyList, &__designList {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        &__designList {
+            margin-left: 0;
+        }
 
         &__title {
             margin: 8vw -8vw 21.33333vw -8vw;
-            font-size: 7.2vw;
+            letter-spacing: 0.16em;
         }
 
         &__philosophy, &__design {
             position: relative;
             margin-bottom: 9.6vw;
-            margin-left: auto;
+            // margin-left: auto;
         }
 
         &__design {
             margin-top: 21.33333vw;
             margin-bottom: 19.46667vw;
+            width: 0;
+        }
+
+        &__text {
+            font-size: 6.2vw;
         }
 
         &__text1 {
-            padding: 30px 16px;
+            padding: 4.9vw 10vw;
         }
 
         &__philosophy h3, &__design h3 {
@@ -1639,96 +1579,66 @@ div.l-header__langIcon p.js-backColor {
         }
 
         &__itemTitle1, &__itemTitle2, &__itemTitle3 {
-            padding: 4.93333vw 9.2vw;
-            font-size: 3vw;
+            font-size: 4vw;
+        }
+
+        &__itemTitle1 {
+            padding: 4.93333vw 7.2vw;
+        }
+
+        &__itemTitle2 {
+            padding: 3.93333vw 4.8vw;
+        }
+
+        &__itemTitle3 {
+            padding: 3.93333vw 5.2vw;
         }
 
         &__item1 h4 {
             top: -4.93333vw;
-            left: 0;
+            left: 2vw;
         }
 
         &__item2 h4 {
             top: 13.26667vw;
-            left: 144px;
+            left: 34.6vw;
+            width: 47.5vw;
         }
 
         &__item3 h4 {
             top: 14.26667vw;
             left: 0;
+            width: 69.3vw;
         }
 
         &__item4 h4 {
             top: -4.93333vw;
-            left: 144px;
+            left: 39vw;
+            width: 41.7vw;
         }
 
         &__itemMain img, &__itemMain2 img {
-            width: 60.33333vw;
-            height: 20vw;
+            width: 71vw;
+            height: 22vw;
         }
     }
 
     .textBox2 p {
-        top: 88%;
-        left: 46%;
+        top: 1vw;
+        left: 7vw;
     }
 
     .itemLeft1 {
-        margin-right: auto;
-        margin-left: 0px;
+        margin-left: 0;
     }
 
     .itemLeft2 {
-        margin-left: 80px;
+        margin-left: 10vw;
 
     }
 
     .inner {
         padding: 0 8vw;
-    }
-}
-
-@media only screen and (min-width: 768px) and (max-width: 1440px){
-
-    .p-passion {
-
-        &__philosophyList, &__designList {
-            width: 50vw;
-        }
-
-        &__philosophy h3, &__design h3 {
-            font-size: 8.75vw;
-        }
-
-        &__philosophy p, &__design p {
-            font-size: 1.66667vw;
-        }
-
-        &__itemMain, &__itemMain2 {
-            width: 43.75vw;
-        }
-
-        &__itemTitle1, &__itemTitle2, &__itemTitle3 {
-            padding: 2.77778vw 3.88889vw;
-            font-size: 1.66667vw;
-        }
-
-        &__textBox p {
-            left: 55%;
-        }
-
-        &__text {
-            font-size: 3.33333vw;
-        }
-
-        &__text1 {
-            padding: 3.33333vw 5.55556vw;
-        }
-
-        &__text2 {
-            margin-top: -1.1em;
-        }
     }
 }
 
@@ -1771,7 +1681,7 @@ div.l-header__langIcon p.js-backColor {
         text-align: center;
         letter-spacing: 0.08em;
         line-height: 1;
-        font-size: 120px;
+        font-size: 5.55556vw;
         font-family: "courier",sans-serif;
     }
 
@@ -1837,7 +1747,7 @@ div.l-header__langIcon p.js-backColor {
     content: '';
 }
 
-@media only screen and (min-device-width: 320px) and (max-width: 767px) {
+@media screen and (min-width: 320px) and (max-width: 767px) {
 
     .p-shop {
 
@@ -1888,6 +1798,10 @@ div.l-header__langIcon p.js-backColor {
             height: 18.66667vw;
             fill: #fff;
         }
+
+        &__text header h2 {
+            font-size: 13.33333vw;
+        }
     }
 
     .p-shop:before {
@@ -1910,7 +1824,7 @@ div.l-header__langIcon p.js-backColor {
     }
 
     &__title h3 {
-        font-size: 70px;
+        font-size: 3.47222vw;
         font-family: "courier",sans-serif;
     }
 
@@ -1920,8 +1834,8 @@ div.l-header__langIcon p.js-backColor {
 
     &__btnBox a {
         background-color: gold;
-        padding: 15px 20px;
-        font-size: 30px;
+        padding: 1.9vw 4.777vw;
+        font-size: 1.25vw;
         font-family: "courier",sans-serif;
     }
 
@@ -1961,18 +1875,23 @@ div.l-header__langIcon p.js-backColor {
     }
 
     &__itemBox h3 {
-        font-size: 15px;
+        font-size: 1.333vw;
     }
 
     &__itemBox p {
-        font-size: 12px;
+        font-size: .97222vw;
         margin-top: 10px;
     }
 
 }
 
-@media only screen and (min-device-width: 320px) and (max-width: 767px) {
+@media screen and (min-device-width: 320px) and (max-width: 767px) {
     .p-news {
+
+
+        &__title h3 {
+            font-size: 8vw;
+        }
 
         &__list li {
             clear:both;
@@ -1995,8 +1914,8 @@ div.l-header__langIcon p.js-backColor {
         }
 
         &__item img {
-            width: 100px;
-            height: 100px;
+            width: 17.33333vw;
+            height: 17.33333vw;
         }
 
         &__btnBox {
@@ -2005,14 +1924,14 @@ div.l-header__langIcon p.js-backColor {
         }
 
         &__btnBox a {
-            padding: 4.53333vw 9.46667vw;
-            font-size: 3vw;
+            padding: 3.53333vw 9.46667vw;
+            font-size: 4vw;
         }
 
         &__item div {
-            width: 100%;
-            display: table-cell;
-            vertical-align: middle;
+            margin-top: 1.4vw;
+            padding-left: 2.33333vw;
+            min-height: 17.33333vw;
         }
     }
 }
@@ -2036,13 +1955,13 @@ div.l-header__langIcon p.js-backColor {
 
     &__title h3 {
         letter-spacing: 0.08em;
-        font-size: 60px;
+        font-size: 5vw;
         margin-bottom: 20px;
         font-family: "courier",sans-serif;
     }
 
     &__title p {
-        font-size: 15px;
+        font-size: 1.25vw;
     }
 
     &__list li {
@@ -2057,6 +1976,7 @@ div.l-header__langIcon p.js-backColor {
         display: block;
         background-color: gold;
         margin-right: 4px;
+        font-size: 1.333vw;
     }
 
     &__list li a:hover {
@@ -2079,6 +1999,7 @@ div.l-header__langIcon p.js-backColor {
         width: 57%;
         margin: 0 auto;
         margin-top: 5.75em;
+        font-size: 1.11111vw;
     }
 
     &__table dt {
@@ -2097,10 +2018,19 @@ div.l-header__langIcon p.js-backColor {
         margin-left: 25%;
         padding-bottom: 2em;
     }
+
+    &__title br {
+        display: none;
+    }
+
 }
 
-@media only screen and (min-device-width: 320px) and (max-width: 767px) {
+@media screen and (min-width: 320px) and (max-width: 767px) {
     .p-contact {
+
+        &__title br {
+            display: block;
+        }
 
         &__title h3 {
             font-size: 8vw;
@@ -2118,6 +2048,7 @@ div.l-header__langIcon p.js-backColor {
 
         &__list li a {
             padding: 6.66667vw 6vw;
+            font-size: 2.8vw;
         }
 
         &__table {
@@ -2181,8 +2112,7 @@ div.l-header__langIcon p.js-backColor {
         position: relative;
         margin: 0 auto;
         padding: 0 50px;
-        max-width: 1340px;
-        bottom: 260px;
+        bottom: 18vw;
     }
 
     &__logoImg {
@@ -2190,7 +2120,7 @@ div.l-header__langIcon p.js-backColor {
     }
 
     &__logoImg img {
-        width: 130px;
+        width: 10vw;
         height: auto;
         object-fit: cover;
     }
@@ -2209,23 +2139,27 @@ div.l-header__langIcon p.js-backColor {
 
     &__text {
         position: absolute;
-        right: 4.166666667em;
+        right: 6.166667em;
         bottom: 0;
         height: 3.333333333em;
         vertical-align: middle;
         text-transform: uppercase;
         font-weight: 400;
         line-height: 3.333333333em;
-        font-size: 12px;
+        font-size: .83333vw;
     }
 
     &__link a {
         color: #fff;
-        font-size: 15px;
+        font-size: 1vw;
     }
 
     &__link a {
         margin-left: 20px;
+    }
+
+    &__link a:first-child {
+        margin-left: 0;
     }
 
     &__link a:hover {
@@ -2238,13 +2172,13 @@ div.l-header__langIcon p.js-backColor {
 
     &__list li {
         display: inline-block;
-        width: 26px;
+        width: 1.99999vw;
         height: 20px;
     }
 
     &__list li a {
         color: #fff;
-        font-size: 34px;
+        font-size: 2.999999vw;
     }
 
     &__list li a:hover {
@@ -2275,8 +2209,12 @@ div.l-header__langIcon p.js-backColor {
     content: '';
 }
 
-@media only screen and (min-device-width: 320px) and (max-width: 767px) {
+@media screen and (min-width: 320px) and (max-width: 767px) {
     .l-footer {
+
+        &__mainBox {
+            bottom: 30vw;
+        }
 
         &__logoImg img {
             width: 200px;
@@ -2291,7 +2229,15 @@ div.l-header__langIcon p.js-backColor {
         }
 
         &__linkBox {
-            bottom: 25px;
+            bottom: 1vw;
+        }
+
+        &__list li {
+            width: 5.99999vw;
+        }
+
+        &__list li a {
+            font-size: 7.999999vw;
         }
     }
 
@@ -2336,9 +2282,14 @@ div.l-header__langIcon p.js-backColor {
     transition: all 0.2s;
 }
 
+.u-padding {
+    padding: 0 90px;
+    max-width: 1260px;
+}
 
 
-@media only screen and (min-device-width: 320px) and (max-width: 767px) {
+
+@media screen and (min-width: 320px) and (max-width: 767px) {
     .u-padding {
         padding: 0 8vw;
     }

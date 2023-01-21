@@ -54,6 +54,16 @@ $(function(){
             }
         });
 
+        $('._scrollPrice').each(function(){
+            var elemPos = $(this).offset().top;
+            var scroll = $(window).scrollTop();
+            var windowHeight = $(window).height();
+            if (scroll > elemPos - windowHeight){
+                $(this).addClass('js-price2');
+            }
+        });
+
+
         $('._scrollSlideLeftSec').each(function(){
             var elemPos = $(this).offset().top;
             var scroll = $(window).scrollTop();
@@ -83,6 +93,17 @@ $(function(){
             if (scroll > elemPos - windowHeight){
                 setTimeout(() => {
                     $(this).addClass('js-material');
+                },800);
+            }
+        });
+
+        $('._scrollYellow').each(function(){
+            var elemPos = $(this).offset().top;
+            var scroll = $(window).scrollTop();
+            var windowHeight = $(window).height();
+            if (scroll > elemPos - windowHeight){
+                setTimeout(() => {
+                    $(this).addClass('js-material2');
                 },800);
             }
         });

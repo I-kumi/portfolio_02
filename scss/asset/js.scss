@@ -93,18 +93,35 @@
 // }
 
 /*左から右に流れるスタイル　背景色ブラック*/
-.js-price {
+.js-price, .js-price2 {
     animation-name: js-priceBack;
     animation-duration: 1s;
     animation-fill-mode: forwards;
+    display: block;
     position: absolute;
     top: 0;
     left: 0;
-    display: block;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0,0,0,0.88);
+    background-color: black;
+    mix-blend-mode: multiply;
     content: '';
+}
+
+.js-price {
+    padding: 5.3vw 12.8vw;
+}
+
+.js-price2 {
+    padding: 6.3vw 30.8vw;
+}
+
+@media screen and (min-width: 320px) and (max-width: 767px) {
+    .js-price {
+        padding: 5.3vw 12.8vw;
+    }
+
+    .js-price2 {
+        padding: 6.3vw 30.8vw;
+    }
 }
 
 @keyframes js-priceBack {
@@ -170,7 +187,7 @@
 }
 
 /*下から上に流れるスタイル　背景色イエロー*/
-.js-material {
+.js-material, .js-material2 {
     position: absolute;
     top: 0;
     left: 0;
@@ -183,6 +200,21 @@
     animation-duration: 2s;
     animation-fill-mode: forwards;
 }
+
+@media screen and (min-width: 320px) and (max-width: 767px) {
+    .js-material {
+        width: 3vw;
+        height: 49vw;
+        padding: 0 8.8vw;
+    }
+    
+    .js-material2 {
+        width: 11vw;
+        height: 29vw;
+        padding: 5.3vw 3.8vw;
+    }
+}
+
 
 @keyframes js-materialBack {
     0% {
