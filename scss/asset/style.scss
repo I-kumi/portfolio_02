@@ -2152,6 +2152,7 @@ img.p-eat__imgTarte {
     &__link a {
         color: #fff;
         font-size: 1vw;
+        margin-left: 1.9vw;
     }
 
     &__link a {
@@ -2186,7 +2187,7 @@ img.p-eat__imgTarte {
     }
 
     &__item {
-        padding-left: 25px;
+        padding-left: 2vw;
     }
 
 }
@@ -2213,15 +2214,15 @@ img.p-eat__imgTarte {
     .l-footer {
 
         &__mainBox {
-            bottom: 30vw;
+            padding:0 6vw;
         }
 
         &__logoImg img {
-            width: 200px;
+            width: 20vw;
         }
 
         &__main {
-            bottom: -200px;
+            bottom: -14vw;
         }
 
         &__link, &__text {
@@ -2229,11 +2230,16 @@ img.p-eat__imgTarte {
         }
 
         &__linkBox {
-            bottom: 1vw;
+            bottom: 6vw;
+            padding: 0 1.333333em 0 10.666667em;
+        }
+
+        &__list {
+            display: flex;
         }
 
         &__list li {
-            width: 5.99999vw;
+            width: 7.99999vw;
         }
 
         &__list li a {

@@ -1787,6 +1787,7 @@ img.p-eat__imgTarte {
 .l-footer__link a {
   color: #fff;
   font-size: 1vw;
+  margin-left: 1.9vw;
 }
 .l-footer__link a {
   margin-left: 20px;
@@ -1813,7 +1814,7 @@ img.p-eat__imgTarte {
   opacity: 0.8;
 }
 .l-footer__item {
-  padding-left: 25px;
+  padding-left: 2vw;
 }
 
 .l-footer .l-footer__triangle {
@@ -1836,22 +1837,26 @@ img.p-eat__imgTarte {
 
 @media screen and (min-width: 320px) and (max-width: 767px) {
   .l-footer__mainBox {
-    bottom: 30vw;
+    padding: 0 6vw;
   }
   .l-footer__logoImg img {
-    width: 200px;
+    width: 20vw;
   }
   .l-footer__main {
-    bottom: -200px;
+    bottom: -14vw;
   }
   .l-footer__link, .l-footer__text {
     display: none;
   }
   .l-footer__linkBox {
-    bottom: 1vw;
+    bottom: 6vw;
+    padding: 0 1.333333em 0 10.666667em;
+  }
+  .l-footer__list {
+    display: flex;
   }
   .l-footer__list li {
-    width: 5.99999vw;
+    width: 7.99999vw;
   }
   .l-footer__list li a {
     font-size: 7.999999vw;
