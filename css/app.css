@@ -2741,7 +2741,7 @@ img.p-eat__imgTarte {
   transition-duration: 3s;
 }
 
-.js-toHide {
+.p-menu__shopLink.js-toHide {
   transform: translateY(-500%);
 }
 
