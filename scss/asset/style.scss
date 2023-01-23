@@ -1,3 +1,7 @@
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     font-family: "Helvetica Neue", "Yu Gothic", YuGothic, Verdana, Meiryo, sans-serif;
 }
@@ -10,7 +14,7 @@ div.l-header__langIcon p.js-backColor {
 
 /* langのiconの色 */
 .fa-external-link-alt {
-    color: #fff;
+    // color: #fff;
     margin-left: 10px;
 }
 
@@ -134,6 +138,7 @@ div.l-header__langIcon p.js-backColor {
         pointer-events: all;
         position: relative;
         display: block;
+        transition : 1s;
     }
 
     &__box img:after {
@@ -145,6 +150,11 @@ div.l-header__langIcon p.js-backColor {
         width: 100%;
         height: 100%;
         content: '';
+    }
+
+    &__box img:hover {
+        opacity: 0.5;
+        transition : 1s;
     }
 
 }
@@ -213,6 +223,8 @@ div.l-header__langIcon p.js-backColor {
         position: absolute;
         top: 0;
         left: 0;
+        width: 100%;
+        height: 84%;
     }
 
     &__imgYellow1 {
@@ -226,7 +238,7 @@ div.l-header__langIcon p.js-backColor {
         width: 100%;
         height: auto;
         object-fit: cover;
-        clip-path: polygon(0% 0%, 194% 43%, 0% 95%, 0% 0%);
+        clip-path: polygon(0% 0%, 205% 37%, 0% 95%, 0% 0%);
     }
 
     &__imgYellow2 {
@@ -234,7 +246,7 @@ div.l-header__langIcon p.js-backColor {
         width: 100%;
         height: auto;
         object-fit: cover;
-        clip-path: polygon(0% 0%, 0% 95%, 52% 81%, 18% 4%);
+        clip-path: polygon(0% 0%, 0% 95%, 49% 81%, 17% 3%);
     }
 }
 
@@ -320,11 +332,11 @@ div.l-header__langIcon p.js-backColor {
     }
 
     &__sound {
-        margin-top: 20px;
+        margin-top: 6vw;
     }
 
     &__body {
-        margin-top: 40px;
+        margin-top: 5vw;
         text-align: justify;
         font-size: 1.38889vw;
         line-height: 2;
@@ -380,7 +392,6 @@ div.l-header__langIcon p.js-backColor {
         top: 0;
         right: 0;
         z-index: 100;
-        display: none;
     }
 
     &__btn a {
@@ -393,6 +404,7 @@ div.l-header__langIcon p.js-backColor {
         height: 56px;
         line-height: 56px;
         font-size: 16px;
+        transition : 1s;
     }
 
     &__country ul {
@@ -401,6 +413,7 @@ div.l-header__langIcon p.js-backColor {
     }
     &__btn a:hover {
         background-color: #333;
+        transition : 1s;
     }
 
     &__langGroup {
@@ -429,6 +442,11 @@ div.l-header__langIcon p.js-backColor {
     &__wrapper ul {
         display: inline-block;
         vertical-align: top;
+    }
+
+    &__wrapper ul a:hover {
+        background-color: #fff;
+        color: #000;
     }
 
     &__wrapper ul a {
@@ -482,7 +500,6 @@ div.l-header__langIcon p.js-backColor {
         z-index: 0;
         width: 160px;
         height: 56px;
-        display: none;
         transform: translateY(0px)
     }
 
@@ -496,14 +513,29 @@ div.l-header__langIcon p.js-backColor {
         width: 160px;
         height: 56px;
         line-height: 56px;
+        transition : 1s;
     }
 
     &__shopLink a:hover {
         background-color: gray;
+        transition : 1s;
     }
 
     &__online {
         top: 57px;
+    }
+
+    &__category {
+        position: fixed;
+        top: 30%;
+        right: 14px;
+        z-index: 1000;
+        transform: translateX(100%);
+        transition-duration: 1s;
+    }
+
+    &__pageNav {
+        display: none;
     }
 
     &__links li {
@@ -517,18 +549,200 @@ div.l-header__langIcon p.js-backColor {
         height: 18px;
         text-align: right;
         line-height: 1;
+        color: #000;
+        text-decoration: none;
     }
+
+    &__linkDot {
+        position: absolute;
+        top: 50%;
+        right: 16px;
+        margin-top: -4px;
+        width: 8px;
+        height: 8px;
+        background-color: rgba(0,0,0,0.25);
+        border-radius: 100%;
+    }
+
+    &__linkDot:hover {
+        background-color: #000;
+    }
+
+    &__linkLabel {
+        position: absolute;
+        top: 11px;
+        right: 40px;
+        white-space: nowrap;
+        pointer-events: none;
+        font-size: 1.5vw;
+        transform: translateX(-10%);
+        transition-duration: 1s;
+        opacity: 0;
+        font-family: "courier",sans-serif;
+    }
+}
+
+
+.c-pageLink:hover .p-menu__linkLabel {
+    transform: translateX(0);
+    opacity: 1;
+}
+
+.p-menu__btn, .p-menu__shopLink {
+    transform: translateY(-300%);
+    transition-duration: 0.5s;
 }
 
 @media screen and (min-width: 320px) and (max-width: 767px) {
 
     .p-menu {
+
+        &__nav {
+            right: 0;
+        }
+
+        &__langGroup {
+            overflow: hidden;
+            height: 100vh;
+            padding: 0;
+        }
+
+        &__navIcon, &__category {
+            display: none;
+        }
+
+        &__navMark {
+            position: absolute;
+            top: 50%;
+            right: 50%;
+            margin-top: -1.428571429%;
+            margin-right: -12.857142857%;
+            width: 25.714285714%;
+            height: 1.428571429%;
+            background-color: #fff;
+            content: '';
+            transition-duration: 0.3s;
+        }
+
+        &__navMark:before {
+            position: absolute;
+            top: -650%;
+            right: 0;
+            width: 100%;
+            height: 100%;
+            background-color: #fff;
+            content: '';
+            transition-duration: 0.3s;
+        }
+
+        &__navMark:after {
+            position: absolute;
+            top: 650%;
+            right: 0;
+            width: 100%;
+            height: 100%;
+            background-color: #fff;
+            content: '';
+            transition-duration: 0.3s;
+        }
+
+        &__wrapper  {
+            overflow: auto;
+            padding: 16.66667vw 4vw 9.86667vw 4vw;
+            width: 100%;
+            height: 100%;
+            box-sizing: border-box;
+        }
+
+        &__wrapper ul {
+            display: block;
+        }
+
+        &__wrapper ul a {
+            padding: 0 18.66667vw 0 3.2vw;
+            height: 9.33333vw;
+            line-height: 9.33333vw;
+            text-decoration: none;
+        }
+
+        &__pageNav ul a {
+            font-size: 3.5vw;
+        }
+
+        &__country, &__langChoice a.is-jp, &__langChoice a.is-en {
+            font-size: 2vw;
+        }
+
+        &__pageNav {
+            position: relative;
+            margin-bottom: 9.86667vw;
+            padding-bottom: 9.86667vw;
+            display: block;
+        }
+
+        &__btn, &__shopLink, &__online {
+            width: 18.66667vw;
+            height: 18.66667vw;
+        }
+
+        &__shopLink {
+            top: 19.2vw;
+        }
+
+        &__online {
+            top: 38.46667vw!important;
+        }
+
+        &__btn a {
+            width: 18.66667vw;
+            height: 18.66667vw;
+            white-space: nowrap;
+            font-size: 4.8vw;
+        }
+
+        &__shopLink a {
+            width: 18.66667vw;
+            height: 18.66667vw;
+            font-size: 3.46667vw;
+            line-height: 18.66667vw;
+        }
+
+        &__online a {
+            font-size: 2.2vw!important;
+        }
+
+        &__pageBorder {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            display: block;
+            width: 100%;
+            height: 1px;
+        }
+
+        &__pageBorder a {
+            display: block;
+            margin: 0 3.2vw;
+            height: 1px;
+            background-color: #fff;
+            line-height: 1;
+            pointer-events: none;
+        }
+
+        .fa-globe, .u-icon__white {
+            font-size: 3vw;
+        }
     }
 }
 
 /*  material */
 .p-material {
     position: relative;
+
+    &__comment span {
+        transform: translateY(-30%);
+        transition-duration: 1s;
+    }
 
     &__cheese {
         margin-top: -4.166666667vw;
@@ -550,7 +764,7 @@ div.l-header__langIcon p.js-backColor {
     &__cheese h2 {
         top: 6vw;
         font-size: 1.888vw;
-        left: 22.44444vw;
+        left: 19.44444vw;
     }
 
     &__tart h2 {
@@ -808,7 +1022,7 @@ div.l-header__langIcon p.js-backColor {
         }
     
         &__cheeseTitle {
-            right: -20.1vw;
+            right: -19.6vw;
             top: -25vw;
         }
     
@@ -976,6 +1190,11 @@ div.l-header__langIcon p.js-backColor {
         line-height: 1.75;
     }
 
+    &__slide {
+        transform: translateX(-100%);
+        transition-duration: 1s;
+    }
+
 }
 
 .p-price:before {
@@ -994,7 +1213,7 @@ div.l-header__langIcon p.js-backColor {
 
         &__box3 {
             font-size: 2.7vw;
-            padding-top: 25vw;
+            padding: 25vw 5vw 0 5vw;
         }
 
         &__svg {
@@ -1089,7 +1308,6 @@ div.l-header__langIcon p.js-backColor {
         padding-top: 327.733333333%;
     }
 }
-
 
 /*  eat  */
 .p-eat {
@@ -1395,12 +1613,12 @@ img.p-eat__imgTarte {
     }
 
     &__item2 h4 {
-        top: 60px;
+        top: 6vw;
         left: 0;
     }
 
     &__item3 h4 {
-        top: 60px;
+        top: 6vw;
         right: 0;
     }
 
@@ -1447,6 +1665,7 @@ img.p-eat__imgTarte {
         position: relative;
         z-index: 10;
         display: block;
+        opacity: 0;
     }
 
     &__box2 ul {
@@ -1487,8 +1706,8 @@ img.p-eat__imgTarte {
         letter-spacing: 0.08em;
         line-height: 2;
         writing-mode: vertical-rl;
-        backface-visibility: hidden;
-        transform: translateZ(0);
+        // backface-visibility: hidden;
+        // transform: translateZ(0);
     }
 
     &__br {
@@ -1521,6 +1740,12 @@ img.p-eat__imgTarte {
 .itemLeft1 {
     margin-left: auto;
 }
+
+.p-passion__comment {
+    transform: translateY(-20%);
+    transition-duration: 1s;
+}
+
 
 
 @media screen and (min-width: 320px) and (max-width: 767px) {
@@ -1579,7 +1804,7 @@ img.p-eat__imgTarte {
         }
 
         &__itemTitle1, &__itemTitle2, &__itemTitle3 {
-            font-size: 4vw;
+            font-size: 3.8vw;
         }
 
         &__itemTitle1 {
@@ -1689,16 +1914,6 @@ img.p-eat__imgTarte {
         color: #fff;
     }
 
-
-    &__title span {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        z-index: 10;
-        font-size: 50px;
-
-    }
-
     &__svg {
         position: absolute;
         top: 0;
@@ -1739,6 +1954,27 @@ img.p-eat__imgTarte {
         display: none;
     }
 
+}
+
+.p-shop__title h2 .p-shop__icon {
+    position: relative;
+    display: inline-block;
+    font-size: 4.22222vw;
+}
+
+.p-shop__icon {
+    animation-name: fadeIn;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+}
+
+@keyframes fadeIn {
+    from {
+        transform: translateX(-20px);
+    }
+    to {
+        transform: translateX(0);
+    }
 }
 
 .p-shops:before {
@@ -1802,10 +2038,15 @@ img.p-eat__imgTarte {
         &__text header h2 {
             font-size: 13.33333vw;
         }
+
     }
 
     .p-shop:before {
         padding-top: 126%;
+    }
+
+    .p-shop__title h2 .p-shop__icon {
+        font-size: 10.22222vw;
     }
 }
 
@@ -1829,7 +2070,7 @@ img.p-eat__imgTarte {
     }
 
     &__btnBox {
-        margin: 30px 0 120px 0;
+        margin: 45px 0 120px 0;
     }
 
     &__btnBox a {
@@ -2093,13 +2334,16 @@ img.p-eat__imgTarte {
     }
 
     &__backGround {
-        background-image: url('../images/pc/main01_yellow.jpg');
+        background-image: url('../images/pc/footer_background_img.jpg');
         width: 100%;
         height: 100%;
         background-attachment: fixed;
         background-position: center bottom;
         background-size: 100% auto;
+    }
 
+    &__backGroundSp {
+        display: none;
     }
 
     &__main {
@@ -2198,7 +2442,7 @@ img.p-eat__imgTarte {
 
 .l-footer .l-footer__triangle {
     position: absolute;
-    top: -1px;
+    top: 0;
     left: 0;
     z-index: 10;
     width: 100%;
@@ -2212,6 +2456,20 @@ img.p-eat__imgTarte {
 
 @media screen and (min-width: 320px) and (max-width: 767px) {
     .l-footer {
+
+        &__backGround {
+            display: none;
+        }
+
+        &__backGroundSp {
+            background-image: url('../images/sp/footer_background_img_sp.jpg');
+            display: block;
+            width: 100%;
+            height: 100%;
+            background-attachment: fixed;
+            background-position: center bottom;
+            background-size: 100% auto;
+        }
 
         &__mainBox {
             padding:0 6vw;
@@ -2268,9 +2526,9 @@ img.p-eat__imgTarte {
     opacity: 0;
 }
 
-.u-icon__white {
-    color: #fff;
-}
+// .u-icon__white {
+//     color: #fff;
+// }
 
 .u-icon__black {
     position: absolute;

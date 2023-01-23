@@ -1,4 +1,8 @@
 @charset "UTF-8";
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   font-family: "Helvetica Neue", "Yu Gothic", YuGothic, Verdana, Meiryo, sans-serif;
 }
@@ -11,7 +15,6 @@ div.l-header__langIcon p.js-backColor {
 
 /* langのiconの色 */
 .fa-external-link-alt {
-  color: #fff;
   margin-left: 10px;
 }
 
@@ -129,6 +132,7 @@ div.l-header__langIcon p.js-backColor {
   pointer-events: all;
   position: relative;
   display: block;
+  transition: 1s;
 }
 .l-header__box img:after {
   position: absolute;
@@ -139,6 +143,10 @@ div.l-header__langIcon p.js-backColor {
   width: 100%;
   height: 100%;
   content: "";
+}
+.l-header__box img:hover {
+  opacity: 0.5;
+  transition: 1s;
 }
 
 .l-header:before {
@@ -190,6 +198,8 @@ div.l-header__langIcon p.js-backColor {
   position: absolute;
   top: 0;
   left: 0;
+  width: 100%;
+  height: 84%;
 }
 .p-main__imgYellow1 {
   width: 100%;
@@ -204,8 +214,8 @@ div.l-header__langIcon p.js-backColor {
   height: auto;
   -o-object-fit: cover;
      object-fit: cover;
-  -webkit-clip-path: polygon(0% 0%, 194% 43%, 0% 95%, 0% 0%);
-          clip-path: polygon(0% 0%, 194% 43%, 0% 95%, 0% 0%);
+  -webkit-clip-path: polygon(0% 0%, 205% 37%, 0% 95%, 0% 0%);
+          clip-path: polygon(0% 0%, 205% 37%, 0% 95%, 0% 0%);
 }
 .p-main__imgYellow2 {
   left: 0;
@@ -213,8 +223,8 @@ div.l-header__langIcon p.js-backColor {
   height: auto;
   -o-object-fit: cover;
      object-fit: cover;
-  -webkit-clip-path: polygon(0% 0%, 0% 95%, 52% 81%, 18% 4%);
-          clip-path: polygon(0% 0%, 0% 95%, 52% 81%, 18% 4%);
+  -webkit-clip-path: polygon(0% 0%, 0% 95%, 49% 81%, 17% 3%);
+          clip-path: polygon(0% 0%, 0% 95%, 49% 81%, 17% 3%);
 }
 
 /* SPサイズ--p-main */
@@ -279,10 +289,10 @@ div.l-header__langIcon p.js-backColor {
   font-size: 1.80556vw;
 }
 .p-memory__sound {
-  margin-top: 20px;
+  margin-top: 6vw;
 }
 .p-memory__body {
-  margin-top: 40px;
+  margin-top: 5vw;
   text-align: justify;
   font-size: 1.38889vw;
   line-height: 2;
@@ -326,7 +336,6 @@ div.l-header__langIcon p.js-backColor {
   top: 0;
   right: 0;
   z-index: 100;
-  display: none;
 }
 .p-menu__btn a {
   display: block;
@@ -338,6 +347,7 @@ div.l-header__langIcon p.js-backColor {
   height: 56px;
   line-height: 56px;
   font-size: 16px;
+  transition: 1s;
 }
 .p-menu__country ul {
   display: inline-block;
@@ -345,6 +355,7 @@ div.l-header__langIcon p.js-backColor {
 }
 .p-menu__btn a:hover {
   background-color: #333;
+  transition: 1s;
 }
 .p-menu__langGroup {
   position: absolute;
@@ -369,6 +380,10 @@ div.l-header__langIcon p.js-backColor {
 .p-menu__wrapper ul {
   display: inline-block;
   vertical-align: top;
+}
+.p-menu__wrapper ul a:hover {
+  background-color: #fff;
+  color: #000;
 }
 .p-menu__wrapper ul a {
   display: block;
@@ -414,7 +429,6 @@ div.l-header__langIcon p.js-backColor {
   z-index: 0;
   width: 160px;
   height: 56px;
-  display: none;
   transform: translateY(0px);
 }
 .p-menu__shopLink a {
@@ -427,12 +441,25 @@ div.l-header__langIcon p.js-backColor {
   width: 160px;
   height: 56px;
   line-height: 56px;
+  transition: 1s;
 }
 .p-menu__shopLink a:hover {
   background-color: gray;
+  transition: 1s;
 }
 .p-menu__online {
   top: 57px;
+}
+.p-menu__category {
+  position: fixed;
+  top: 30%;
+  right: 14px;
+  z-index: 1000;
+  transform: translateX(100%);
+  transition-duration: 1s;
+}
+.p-menu__pageNav {
+  display: none;
 }
 .p-menu__links li {
   position: relative;
@@ -444,11 +471,169 @@ div.l-header__langIcon p.js-backColor {
   height: 18px;
   text-align: right;
   line-height: 1;
+  color: #000;
+  text-decoration: none;
+}
+.p-menu__linkDot {
+  position: absolute;
+  top: 50%;
+  right: 16px;
+  margin-top: -4px;
+  width: 8px;
+  height: 8px;
+  background-color: rgba(0, 0, 0, 0.25);
+  border-radius: 100%;
+}
+.p-menu__linkDot:hover {
+  background-color: #000;
+}
+.p-menu__linkLabel {
+  position: absolute;
+  top: 11px;
+  right: 40px;
+  white-space: nowrap;
+  pointer-events: none;
+  font-size: 1.5vw;
+  transform: translateX(-10%);
+  transition-duration: 1s;
+  opacity: 0;
+  font-family: "courier", sans-serif;
 }
 
+.c-pageLink:hover .p-menu__linkLabel {
+  transform: translateX(0);
+  opacity: 1;
+}
+
+.p-menu__btn, .p-menu__shopLink {
+  transform: translateY(-300%);
+  transition-duration: 0.5s;
+}
+
+@media screen and (min-width: 320px) and (max-width: 767px) {
+  .p-menu__nav {
+    right: 0;
+  }
+  .p-menu__langGroup {
+    overflow: hidden;
+    height: 100vh;
+    padding: 0;
+  }
+  .p-menu__navIcon, .p-menu__category {
+    display: none;
+  }
+  .p-menu__navMark {
+    position: absolute;
+    top: 50%;
+    right: 50%;
+    margin-top: -1.428571429%;
+    margin-right: -12.857142857%;
+    width: 25.714285714%;
+    height: 1.428571429%;
+    background-color: #fff;
+    content: "";
+    transition-duration: 0.3s;
+  }
+  .p-menu__navMark:before {
+    position: absolute;
+    top: -650%;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #fff;
+    content: "";
+    transition-duration: 0.3s;
+  }
+  .p-menu__navMark:after {
+    position: absolute;
+    top: 650%;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #fff;
+    content: "";
+    transition-duration: 0.3s;
+  }
+  .p-menu__wrapper {
+    overflow: auto;
+    padding: 16.66667vw 4vw 9.86667vw 4vw;
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+  }
+  .p-menu__wrapper ul {
+    display: block;
+  }
+  .p-menu__wrapper ul a {
+    padding: 0 18.66667vw 0 3.2vw;
+    height: 9.33333vw;
+    line-height: 9.33333vw;
+    text-decoration: none;
+  }
+  .p-menu__pageNav ul a {
+    font-size: 3.5vw;
+  }
+  .p-menu__country, .p-menu__langChoice a.is-jp, .p-menu__langChoice a.is-en {
+    font-size: 2vw;
+  }
+  .p-menu__pageNav {
+    position: relative;
+    margin-bottom: 9.86667vw;
+    padding-bottom: 9.86667vw;
+    display: block;
+  }
+  .p-menu__btn, .p-menu__shopLink, .p-menu__online {
+    width: 18.66667vw;
+    height: 18.66667vw;
+  }
+  .p-menu__shopLink {
+    top: 19.2vw;
+  }
+  .p-menu__online {
+    top: 38.46667vw !important;
+  }
+  .p-menu__btn a {
+    width: 18.66667vw;
+    height: 18.66667vw;
+    white-space: nowrap;
+    font-size: 4.8vw;
+  }
+  .p-menu__shopLink a {
+    width: 18.66667vw;
+    height: 18.66667vw;
+    font-size: 3.46667vw;
+    line-height: 18.66667vw;
+  }
+  .p-menu__online a {
+    font-size: 2.2vw !important;
+  }
+  .p-menu__pageBorder {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    display: block;
+    width: 100%;
+    height: 1px;
+  }
+  .p-menu__pageBorder a {
+    display: block;
+    margin: 0 3.2vw;
+    height: 1px;
+    background-color: #fff;
+    line-height: 1;
+    pointer-events: none;
+  }
+  .p-menu .fa-globe, .p-menu .u-icon__white {
+    font-size: 3vw;
+  }
+}
 /*  material */
 .p-material {
   position: relative;
+}
+.p-material__comment span {
+  transform: translateY(-30%);
+  transition-duration: 1s;
 }
 .p-material__cheese {
   margin-top: -4.166666667vw;
@@ -468,7 +653,7 @@ div.l-header__langIcon p.js-backColor {
 .p-material__cheese h2 {
   top: 6vw;
   font-size: 1.888vw;
-  left: 22.44444vw;
+  left: 19.44444vw;
 }
 .p-material__tart h2 {
   top: 0;
@@ -685,7 +870,7 @@ div.l-header__langIcon p.js-backColor {
     font-family: "courier", sans-serif;
   }
   .p-material__cheeseTitle {
-    right: -20.1vw;
+    right: -19.6vw;
     top: -25vw;
   }
   .p-material__cheeseText {
@@ -825,6 +1010,10 @@ div.l-header__langIcon p.js-backColor {
   display: block;
   line-height: 1.75;
 }
+.p-price__slide {
+  transform: translateX(-100%);
+  transition-duration: 1s;
+}
 
 .p-price:before {
   display: block;
@@ -841,7 +1030,7 @@ div.l-header__langIcon p.js-backColor {
   }
   .p-price__box3 {
     font-size: 2.7vw;
-    padding-top: 25vw;
+    padding: 25vw 5vw 0 5vw;
   }
   .p-price__svg {
     display: none;
@@ -1168,11 +1357,11 @@ img.p-eat__imgTarte {
   right: 0;
 }
 .p-passion__item2 h4 {
-  top: 60px;
+  top: 6vw;
   left: 0;
 }
 .p-passion__item3 h4 {
-  top: 60px;
+  top: 6vw;
   right: 0;
 }
 .p-passion__item4 h4 {
@@ -1213,6 +1402,7 @@ img.p-eat__imgTarte {
   position: relative;
   z-index: 10;
   display: block;
+  opacity: 0;
 }
 .p-passion__box2 ul {
   margin-left: auto;
@@ -1249,9 +1439,6 @@ img.p-eat__imgTarte {
   line-height: 2;
   -ms-writing-mode: tb-rl;
       writing-mode: vertical-rl;
-  -webkit-backface-visibility: hidden;
-          backface-visibility: hidden;
-  transform: translateZ(0);
 }
 .p-passion__br {
   font-size: 1px;
@@ -1279,6 +1466,11 @@ img.p-eat__imgTarte {
 
 .itemLeft1 {
   margin-left: auto;
+}
+
+.p-passion__comment {
+  transform: translateY(-20%);
+  transition-duration: 1s;
 }
 
 @media screen and (min-width: 320px) and (max-width: 767px) {
@@ -1325,7 +1517,7 @@ img.p-eat__imgTarte {
     left: 72%;
   }
   .p-passion__itemTitle1, .p-passion__itemTitle2, .p-passion__itemTitle3 {
-    font-size: 4vw;
+    font-size: 3.8vw;
   }
   .p-passion__itemTitle1 {
     padding: 4.93333vw 7.2vw;
@@ -1414,13 +1606,6 @@ img.p-eat__imgTarte {
 .p-shop__text header h2 a {
   color: #fff;
 }
-.p-shop__title span {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  z-index: 10;
-  font-size: 50px;
-}
 .p-shop__svg {
   position: absolute;
   top: 0;
@@ -1457,6 +1642,38 @@ img.p-eat__imgTarte {
   display: none;
 }
 
+.p-shop__title h2 .p-shop__icon {
+  position: relative;
+  display: inline-block;
+  font-size: 4.22222vw;
+}
+
+.p-shop__icon {
+  -webkit-animation-name: fadeIn;
+          animation-name: fadeIn;
+  -webkit-animation-duration: 2s;
+          animation-duration: 2s;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+}
+
+@-webkit-keyframes fadeIn {
+  from {
+    transform: translateX(-20px);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    transform: translateX(-20px);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
 .p-shops:before {
   display: block;
   padding-top: 61.09375%;
@@ -1512,6 +1729,9 @@ img.p-eat__imgTarte {
   .p-shop:before {
     padding-top: 126%;
   }
+  .p-shop__title h2 .p-shop__icon {
+    font-size: 10.22222vw;
+  }
 }
 /* news */
 .p-news {
@@ -1529,7 +1749,7 @@ img.p-eat__imgTarte {
   font-family: "courier", sans-serif;
 }
 .p-news__btnBox {
-  margin: 30px 0 120px 0;
+  margin: 45px 0 120px 0;
 }
 .p-news__btnBox a {
   background-color: gold;
@@ -1736,12 +1956,15 @@ img.p-eat__imgTarte {
   left: 0;
 }
 .l-footer__backGround {
-  background-image: url("../images/pc/main01_yellow.jpg");
+  background-image: url("../images/pc/footer_background_img.jpg");
   width: 100%;
   height: 100%;
   background-attachment: fixed;
   background-position: center bottom;
   background-size: 100% auto;
+}
+.l-footer__backGroundSp {
+  display: none;
 }
 .l-footer__main {
   position: absolute;
@@ -1823,7 +2046,7 @@ img.p-eat__imgTarte {
 
 .l-footer .l-footer__triangle {
   position: absolute;
-  top: -1px;
+  top: 0;
   left: 0;
   z-index: 10;
   width: 100%;
@@ -1836,6 +2059,18 @@ img.p-eat__imgTarte {
 }
 
 @media screen and (min-width: 320px) and (max-width: 767px) {
+  .l-footer__backGround {
+    display: none;
+  }
+  .l-footer__backGroundSp {
+    background-image: url("../images/sp/footer_background_img_sp.jpg");
+    display: block;
+    width: 100%;
+    height: 100%;
+    background-attachment: fixed;
+    background-position: center bottom;
+    background-size: 100% auto;
+  }
   .l-footer__mainBox {
     padding: 0 6vw;
   }
@@ -1878,10 +2113,6 @@ img.p-eat__imgTarte {
   opacity: 0;
 }
 
-.u-icon__white {
-  color: #fff;
-}
-
 .u-icon__black {
   position: absolute;
   top: 2.5em;
@@ -1912,7 +2143,7 @@ img.p-eat__imgTarte {
   opacity: 0;
   visibility: hidden;
   transition: 1s;
-  transform: translate(0, 1rem);
+  transform: translateY(50%);
 }
 
 ._scrollSlideUp {
@@ -1922,7 +2153,8 @@ img.p-eat__imgTarte {
   transform: translate(0, 8rem);
 }
 
-._scrollSlideSaku, ._scrollSlideFuwa {
+._scrollSlideSaku,
+._scrollSlideFuwa {
   opacity: 0;
   visibility: hidden;
   transition: 2s;
@@ -1934,21 +2166,21 @@ img.p-eat__imgTarte {
   opacity: 0;
   visibility: hidden;
   transition: 0.8s;
-  transform: translateY(-10%);
+  transform: translateY(-20%);
 }
 
 ._scrollBothSlideDownSec {
   opacity: 0;
   visibility: hidden;
   transition: 2s;
-  transform: translateY(-10%);
+  transform: translateY(-20%);
 }
 
 ._scrollBothSlideDownThr {
   opacity: 0;
   visibility: hidden;
   transition: 4s;
-  transform: translateY(-10%);
+  transform: translateY(-20%);
 }
 
 /*　スクロールイベントが実装されたら付与されるクラス */
@@ -1978,23 +2210,25 @@ img.p-eat__imgTarte {
   transform: translateY(0);
 }
 
-/*中の要素*/
-.js-slideText {
-  -webkit-animation-duration: 0.8s;
-          animation-duration: 0.8s;
-  -webkit-animation-fill-mode: forwards;
-          animation-fill-mode: forwards;
-  color: #fff;
-  -webkit-clip-path: inset(0 100% 0 0);
-  clip-path: inset(0 100% 0 0);
+._linkSlideLeft {
+  opacity: 0;
+  visibility: hidden;
+  transition: 1s;
+  transform: translateX(-20%);
+}
+
+.js-linkSlideLeft {
+  opacity: 1;
+  visibility: visible;
+  transform: translateX(0);
 }
 
 /*左から右に流れるスタイル　背景色ブラック*/
 .js-price, .js-price2 {
   -webkit-animation-name: js-priceBack;
           animation-name: js-priceBack;
-  -webkit-animation-duration: 1s;
-          animation-duration: 1s;
+  -webkit-animation-duration: 3.5s;
+          animation-duration: 3.5s;
   -webkit-animation-fill-mode: forwards;
           animation-fill-mode: forwards;
   display: block;
@@ -2044,6 +2278,45 @@ img.p-eat__imgTarte {
 }
 /*左から右に流れるスタイル　背景色イエロー*/
 .js-passion {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 0;
+  width: 100%;
+  height: 100%;
+  background-color: gold;
+  content: "";
+  -webkit-animation-name: js-passionBackYellow;
+          animation-name: js-passionBackYellow;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+  -webkit-animation-duration: 0.8s;
+          animation-duration: 0.8s;
+  opacity: 0;
+}
+
+@-webkit-keyframes js-passionBackYellow {
+  from {
+    transform: translateX(-30%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes js-passionBackYellow {
+  from {
+    transform: translateX(-30%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+.js-passionTitle {
   position: absolute;
   top: 0;
   left: 0;
@@ -2113,7 +2386,8 @@ img.p-eat__imgTarte {
   }
 }
 /*下から上に流れるスタイル　背景色イエロー*/
-.js-material, .js-material2 {
+.js-material,
+.js-material2 {
   position: absolute;
   top: 0;
   left: 0;
@@ -2124,8 +2398,8 @@ img.p-eat__imgTarte {
   content: "";
   -webkit-animation-name: js-materialBack;
           animation-name: js-materialBack;
-  -webkit-animation-duration: 2s;
-          animation-duration: 2s;
+  -webkit-animation-duration: 0.8s;
+          animation-duration: 0.8s;
   -webkit-animation-fill-mode: forwards;
           animation-fill-mode: forwards;
 }
@@ -2375,11 +2649,12 @@ img.p-eat__imgTarte {
 .slideAnimeLeft {
   -webkit-animation-name: slideTextX100;
           animation-name: slideTextX100;
-  -webkit-animation-duration: 0.8s;
-          animation-duration: 0.8s;
+  -webkit-animation-duration: 1.5s;
+          animation-duration: 1.5s;
   -webkit-animation-fill-mode: forwards;
           animation-fill-mode: forwards;
   opacity: 0;
+  transform: translateX(-100%);
 }
 
 @-webkit-keyframes slideTextX100 {
@@ -2406,8 +2681,8 @@ img.p-eat__imgTarte {
 .slideAnimeRight {
   -webkit-animation-name: slideTextX-100;
           animation-name: slideTextX-100;
-  -webkit-animation-duration: 0.8s;
-          animation-duration: 0.8s;
+  -webkit-animation-duration: 1.5s;
+          animation-duration: 1.5s;
   -webkit-animation-fill-mode: forwards;
           animation-fill-mode: forwards;
   opacity: 0;
@@ -2438,8 +2713,8 @@ img.p-eat__imgTarte {
 .js-fadeIn {
   -webkit-animation-name: fadeInAnime;
           animation-name: fadeInAnime;
-  -webkit-animation-duration: 2s;
-          animation-duration: 2s;
+  -webkit-animation-duration: 3.5s;
+          animation-duration: 3.5s;
   -webkit-animation-fill-mode: forwards;
           animation-fill-mode: forwards;
   opacity: 0;
@@ -2473,6 +2748,36 @@ img.p-eat__imgTarte {
 
 .fa-caret-down.js-revolving {
   transform: rotate(180deg);
+}
+
+.js-pageLink {
+  transform: translateX(0);
+}
+
+.js-priceText {
+  transform: translateX(0);
+}
+
+.js-page {
+  opacity: 1;
+}
+
+.js-headerActive {
+  transform: translateY(0);
+}
+
+.p-menu__navMark.js-navBorderAfter::after {
+  top: 0;
+  transform: rotate(-135deg);
+}
+
+.p-menu__navMark.js-navBorderBefore::before {
+  top: 0;
+  transform: rotate(135deg);
+}
+
+.js-navBorderNone {
+  background-color: rgba(255, 255, 255, 0);
 }
 
 /*// ==========================================================================

@@ -1,6 +1,19 @@
+//画面リロード時、ページをトップにもっていく
+$(function() {
+    $('html,body').animate({ scrollTop: 0 }, '1');
+});
+
+//ロゴ画像クリックで画面をリロードする
+$(function() {
+    $('.l-header__box').on('click',function(){
+        location.reload();
+    });
+});
+
+//ページを読み込んでから1秒後に表示するアニメーション
 $(window).on('load',function(){
     setTimeout(function(){
-		$('.l-header__box, .p-menu__shopLink, .p-menu__btn').fadeIn(1000);
+		$('.l-header__box').fadeIn(1000);
 	},1000);
 });
 
@@ -76,14 +89,26 @@ $(function(){
         });
 
         //イエローの背景を左からスライド表示
+        $('._scrollSlideYellow').each(function(){
+            var elemPos = $(this).offset().top;
+            var scroll = $(window).scrollTop();
+            var windowHeight = $(window).height();
+            if (scroll > elemPos - windowHeight){
+                $(this).addClass('js-passionTitle');
+            }
+        });
+
         $('._scrollSlideLeftYellow').each(function(){
             var elemPos = $(this).offset().top;
             var scroll = $(window).scrollTop();
             var windowHeight = $(window).height();
             if (scroll > elemPos - windowHeight){
-                $(this).addClass('js-passion');
+                setTimeout(() => {
+                    $(this).addClass('js-passion');
+                },1000);
             }
         });
+        
 
         //イエローの背景を下からスライド表示
         $('._scrollSlideUpYellow').each(function(){
@@ -114,7 +139,9 @@ $(function(){
             var scroll = $(window).scrollTop();
             var windowHeight = $(window).height();
             if (scroll > elemPos - windowHeight){
-                $(this).addClass('is-active');
+                setTimeout(() => {
+                    $(this).addClass('is-active');
+                },1000);
             }
         });
 
@@ -135,7 +162,9 @@ $(function(){
             var scroll = $(window).scrollTop();
             var windowHeight = $(window).height();
             if (scroll > elemPos - windowHeight){
-                $(this).addClass('is-active');
+                setTimeout(() => {
+                    $(this).addClass('is-active');
+                },1000);
             }
         });
 
@@ -245,6 +274,15 @@ $(function(){
             }
         });
 
+        $('.p-passion__comment').each(function(){
+            var elemPos = $(this).offset().top;
+            var scroll = $(window).scrollTop();
+            var windowHeight = $(window).height();
+            if (scroll > elemPos - windowHeight){
+                $(this).addClass('js-headerActive');
+            }
+        });
+
         $('.p-material__text').each(function(){
             var elemPos = $(this).offset().top;
             var scroll = $(window).scrollTop();
@@ -255,7 +293,7 @@ $(function(){
         });
 
         //CHEESE・TART　縦書きの文字を上から下に一文字ずつ表示する
-        $('.u-downAnime').each(function(){ 
+        $('.u-downAnime').each(function(){
 			var elemPos = $(this).offset().top-50;
 			var scroll = $(window).scrollTop();
 			var windowHeight = $(window).height();
@@ -267,15 +305,41 @@ $(function(){
 			}
 		});
 
-        $('.u-textLeft').each(function(){ 
+        //文字のスライド
+        $('.u-textLeft').each(function(){
 			var elemPos = $(this).offset().top-50;
 			var scroll = $(window).scrollTop();
 			var windowHeight = $(window).height();
 			if (scroll >= elemPos - windowHeight){
-				$(this).addClass("slideAnimeLeft"); 
-				$(this).children(".u-textLeftAnime").addClass("slideAnimeRight");
+                setTimeout(() => {
+                    $(this).addClass("slideAnimeLeft");
+                    $(this).children(".u-textLeftAnime").addClass("slideAnimeRight");
+                },1000)
 			}
 		});
+
+        $('.p-passion__itemTitle').each(function(){
+			var elemPos = $(this).offset().top-50;
+			var scroll = $(window).scrollTop();
+			var windowHeight = $(window).height();
+			if (scroll >= elemPos - windowHeight){
+                setTimeout(() => {
+                    $(this).addClass("js-page");
+                    $(this).children(".u-textLeftAnime").addClass("slideAnimeRight");
+                },1500)
+			}
+		});
+
+        $('.p-material__comment').each(function(){
+            var elemPos = $(this).offset().top;
+            var scroll = $(window).scrollTop();
+            var windowHeight = $(window).height();
+            if (scroll > elemPos - windowHeight){
+                setTimeout(() => {
+                    $(this).addClass('js-headerActive');
+                }, 500);
+            }
+        });
 
         $('.fadeIn').each(function(){
             var elemPos = $(this).offset().top;
@@ -283,6 +347,15 @@ $(function(){
             var windowHeight = $(window).height();
             if (scroll > elemPos - windowHeight){
                 $(this).addClass('js-fadeIn');
+            }
+        });
+
+        $('.p-price__slide').each(function(){
+            var elemPos = $(this).offset().top;
+            var scroll = $(window).scrollTop();
+            var windowHeight = $(window).height();
+            if (scroll > elemPos - windowHeight){
+                $(this).addClass('js-priceText');
             }
         });
 
@@ -300,6 +373,18 @@ $(function(){
 	});
 });
 
+$(function() {
+    $('.p-menu__btn').on('click',function(){
+        $('._linkSlideLeft').each(function(i){
+            let delay = 50;
+            $(this).delay(i * delay).queue(function(next){
+                $(this).toggleClass('js-linkSlideLeft');
+                next();
+            });
+        });
+    });
+});
+
 //ロード時のにメーション
 $(window).on('load',function(){
     setTimeout(() => {
@@ -311,16 +396,46 @@ $(window).on('load',function(){
 
 $(window).on('load',function(){
     setTimeout(() => {
+        $('.p-menu__category').each(function(){
+            $(this).addClass('js-pageLink');
+        });
+    },2500);
+});
+
+$(window).on('load',function(){
+    setTimeout(() => {
         $('._lordSlideImgUp').each(function(){
             $(this).addClass('is-active');
         });
     }, 1000);
 });
 
+
+//言語選択部分にカーソルが当たったらの文字いろ変更
+$(window).on('load',function(){
+    setTimeout(function(){
+		$('.p-menu__btn').addClass('js-headerActive');
+	},1500);
+});
+
+$(window).on('load',function(){
+    setTimeout(function(){
+		$('.p-menu__shopLink').addClass('js-headerActive');
+	},2000);
+});
+
+
 //言語選択部分にカーソルが当たったらの文字いろ変更
 $(function(){
     $('.is-en').hover(function(){
         $('.is-en').toggleClass('is-jp');
+    });
+});
+
+
+$(function() {
+    $('.p-menu__btn').on('click',function(){
+        $('.p-menu__shopLink').toggleClass('js-toHide');
     });
 });
 
@@ -331,16 +446,30 @@ $(function() {
     });
 });
 
-
-//言語ボタンクリックで要素を隠す
-$(function() {
-    $('.p-menu__navLabel').on('click',function(){
-        $('.p-menu__shopLink').toggleClass('js-toHide');
-    });
-});
-
 $(function() {
     $('.p-menu__navLabel').on('click',function(){
         $('.fa-caret-down').toggleClass('js-revolving');
     });
 });
+
+//三本線クリックで×にする
+$(function() {
+    $('.p-menu__navLabel').on('click',function(){
+        $('.p-menu__navMark').toggleClass('js-navBorderAfter');
+    });
+});
+
+$(function() {
+    $('.p-menu__navLabel').on('click',function(){
+        $('.p-menu__navMark').toggleClass('js-navBorderBefore');
+    });
+});
+
+$(function() {
+    $('.p-menu__navLabel').on('click',function(){
+        $('.p-menu__navMark').toggleClass('js-navBorderNone');
+    });
+});
+
+
+
