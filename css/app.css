@@ -121,7 +121,6 @@ div.l-header__langIcon p.js-backColor {
   position: absolute;
   top: 3.55556vw;
   left: 4.55556vw;
-  transform: translate(0, 0);
   display: none;
 }
 .l-header__box img {
@@ -429,7 +428,6 @@ div.l-header__langIcon p.js-backColor {
   z-index: 0;
   width: 160px;
   height: 56px;
-  transform: translateY(0px);
 }
 .p-menu__shopLink a {
   display: block;
@@ -506,7 +504,7 @@ div.l-header__langIcon p.js-backColor {
 }
 
 .p-menu__btn, .p-menu__shopLink {
-  transform: translateY(-300%);
+  transform: translateY(-500%);
   transition-duration: 0.5s;
 }
 
@@ -590,7 +588,7 @@ div.l-header__langIcon p.js-backColor {
     top: 19.2vw;
   }
   .p-menu__online {
-    top: 38.46667vw !important;
+    top: 38.46667vw;
   }
   .p-menu__btn a {
     width: 18.66667vw;
@@ -2742,8 +2740,8 @@ img.p-eat__imgTarte {
   transition-duration: 3s;
 }
 
-.p-menu__shopLink.js-toHide {
-  transform: translateY(-204%);
+.js-toHide {
+  transform: translateY(-500%);
 }
 
 .fa-caret-down.js-revolving {
@@ -2756,10 +2754,6 @@ img.p-eat__imgTarte {
 
 .js-priceText {
   transform: translateX(0);
-}
-
-.js-page {
-  opacity: 1;
 }
 
 .js-headerActive {

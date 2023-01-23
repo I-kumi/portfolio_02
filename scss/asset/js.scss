@@ -463,8 +463,8 @@
     transition-duration: 3s;
 }
 
-.p-menu__shopLink.js-toHide {
-    transform: translateY(-204%);
+.js-toHide {
+    transform: translateY(-500%);
 }
 
 //▼アイコンのアニメーション
@@ -482,9 +482,9 @@
     transform: translateX(0);
 }
 
-.js-page {
-    opacity: 1;
-}
+// .js-page {
+//     opacity: 1;
+// }
 
 //
 .js-headerActive {

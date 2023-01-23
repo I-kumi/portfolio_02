@@ -127,7 +127,6 @@ div.l-header__langIcon p.js-backColor {
         position: absolute;
         top: 3.55556vw;
         left: 4.55556vw;
-        transform: translate(0, 0);
         display: none;
     }
 
@@ -500,7 +499,6 @@ div.l-header__langIcon p.js-backColor {
         z-index: 0;
         width: 160px;
         height: 56px;
-        transform: translateY(0px)
     }
 
     &__shopLink a {
@@ -589,10 +587,11 @@ div.l-header__langIcon p.js-backColor {
 }
 
 .p-menu__btn, .p-menu__shopLink {
-    transform: translateY(-300%);
+    transform: translateY(-500%);
     transition-duration: 0.5s;
 }
 
+//p-menuのSPスタイル
 @media screen and (min-width: 320px) and (max-width: 767px) {
 
     .p-menu {
@@ -690,7 +689,7 @@ div.l-header__langIcon p.js-backColor {
         }
 
         &__online {
-            top: 38.46667vw!important;
+            top: 38.46667vw;
         }
 
         &__btn a {
@@ -893,6 +892,8 @@ div.l-header__langIcon p.js-backColor {
     }
 }
 
+
+//p-materialのSPスタイル
 @media screen and (min-width: 320px) and (max-width: 767px) {
 
     .p-material {
@@ -1203,6 +1204,7 @@ div.l-header__langIcon p.js-backColor {
     content: '';
 }
 
+//p-priceのSPスタイル
 @media screen and (min-width: 320px) and (max-width: 767px) {
     .p-price {
         margin-top: 37.13333vw;
@@ -1436,6 +1438,7 @@ img.p-eat__imgTarte {
     width: 16vw;
 }
 
+//p-eatのSPスタイル
 @media screen and (min-width: 320px) and (max-width: 767px) {
     .p-eat {
         margin-top: -14.93333vw;
@@ -1706,8 +1709,6 @@ img.p-eat__imgTarte {
         letter-spacing: 0.08em;
         line-height: 2;
         writing-mode: vertical-rl;
-        // backface-visibility: hidden;
-        // transform: translateZ(0);
     }
 
     &__br {
@@ -1747,7 +1748,7 @@ img.p-eat__imgTarte {
 }
 
 
-
+//p-passionのSPスタイル
 @media screen and (min-width: 320px) and (max-width: 767px) {
     .p-passion {
 
@@ -1983,6 +1984,7 @@ img.p-eat__imgTarte {
     content: '';
 }
 
+//p-shopのSPスタイル
 @media screen and (min-width: 320px) and (max-width: 767px) {
 
     .p-shop {
@@ -2126,6 +2128,7 @@ img.p-eat__imgTarte {
 
 }
 
+//p-newsのSPスタイル
 @media screen and (min-device-width: 320px) and (max-width: 767px) {
     .p-news {
 
@@ -2266,6 +2269,7 @@ img.p-eat__imgTarte {
 
 }
 
+//p-contactのSPスタイル
 @media screen and (min-width: 320px) and (max-width: 767px) {
     .p-contact {
 
@@ -2454,6 +2458,7 @@ img.p-eat__imgTarte {
     content: '';
 }
 
+//l-footerのSPスタイル
 @media screen and (min-width: 320px) and (max-width: 767px) {
     .l-footer {
 

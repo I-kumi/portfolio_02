@@ -603,8 +603,8 @@
   transition-duration: 3s;
 }
 
-.p-menu__shopLink.js-toHide {
-  transform: translateY(-204%);
+.js-toHide {
+  transform: translateY(-500%);
 }
 
 .fa-caret-down.js-revolving {
@@ -617,10 +617,6 @@
 
 .js-priceText {
   transform: translateX(0);
-}
-
-.js-page {
-  opacity: 1;
 }
 
 .js-headerActive {

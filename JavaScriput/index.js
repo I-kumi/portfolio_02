@@ -1,8 +1,3 @@
-//画面リロード時、ページをトップにもっていく
-$(function() {
-    $('html,body').animate({ scrollTop: 0 }, '1');
-});
-
 //ロゴ画像クリックで画面をリロードする
 $(function() {
     $('.l-header__box').on('click',function(){
@@ -13,32 +8,9 @@ $(function() {
 //ページを読み込んでから1秒後に表示するアニメーション
 $(window).on('load',function(){
     setTimeout(function(){
-		$('.l-header__box').fadeIn(1000);
+		$('.l-header__box').hide().fadeIn(1000);
 	},1000);
 });
-
-$(function(){
-	$(window).on('scroll',function (){
-		$('._scrollBothSlideUp').each(function(){
-			var target = $(this).offset().top;
-			var scroll = $(window).scrollTop();
-			var height = $(window).height();
-			if (scroll > target - height){
-				$(this).addClass('_isActiveBothSlideUp');
-			}
-		});
-
-        $('._scrollSlideUp').each(function(){
-			var target = $(this).offset().top;
-			var scroll = $(window).scrollTop();
-			var height = $(window).height();
-			if (scroll > target - height){
-				$(this).addClass('_isActiveBothSlideUp');
-			}
-		});
-	});
-});
-
 
 $(function(){
 	$(window).on('load scroll',function (){
@@ -56,6 +28,23 @@ $(function(){
 
 $(function(){
 	$(window).on('scroll',function (){
+        $('._scrollBothSlideUp').each(function(){
+			var target = $(this).offset().top;
+			var scroll = $(window).scrollTop();
+			var height = $(window).height();
+			if (scroll > target - height){
+				$(this).addClass('_isActiveBothSlideUp');
+			}
+		});
+
+        $('._scrollSlideUp').each(function(){
+			var target = $(this).offset().top;
+			var scroll = $(window).scrollTop();
+			var height = $(window).height();
+			if (scroll > target - height){
+				$(this).addClass('_isActiveBothSlideUp');
+			}
+		});
 
         //priceの背景を左からスライド表示
         $('._scrollSlideLeft').each(function(){
