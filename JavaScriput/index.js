@@ -27,7 +27,7 @@ $(function(){
 
 
 $(function(){
-	$(window).on('scroll',function (){
+	$(window).on('load scroll',function (){
         $('._scrollBothSlideUp').each(function(){
 			var target = $(this).offset().top;
 			var scroll = $(window).scrollTop();
@@ -212,7 +212,7 @@ $(function(){
             if (scroll > elemPos - windowHeight){
                 setTimeout(() => {
                     $(this).addClass('js-timeLag');
-                },1800);
+                },1500);
             }
         });
 
