@@ -421,41 +421,44 @@ $(function(){
     });
 });
 
-
-$(function() {
-    $('.p-menu__btn').on('click',function(){
-        $('.p-menu__shopLink').toggleClass('js-toHide');
-    });
+//SPサイズの時にJP言語選択ボタンクリックで要素を隠す
+$(document).ready(function(){
+    if($(window).width() < 767) {
+        $('.p-menu__btn').on('click',function(){
+            $('.p-menu__shopLink').toggleClass('js-toHide');
+        });
+    }
 });
+
 
 //ナビゲーションメニューをクリックでモーダルの表示切り替えをする
 $(function() {
-    $('.p-menu__navLabel').on('click',function(){
+    $('.p-menu__btn').on('click',function(){
         $('.p-menu__langGroup').toggleClass('js-active');
     });
 });
 
 $(function() {
-    $('.p-menu__navLabel').on('click',function(){
+    $('.p-menu__btn').on('click',function(){
         $('.fa-caret-down').toggleClass('js-revolving');
     });
 });
 
 //三本線クリックで×にする
 $(function() {
-    $('.p-menu__navLabel').on('click',function(){
+    $('.p-menu__btn').on('click',function(){
         $('.p-menu__navMark').toggleClass('js-navBorderAfter');
     });
 });
 
 $(function() {
-    $('.p-menu__navLabel').on('click',function(){
+    $('.p-menu__btn').on('click',function(){
         $('.p-menu__navMark').toggleClass('js-navBorderBefore');
     });
 });
 
 $(function() {
-    $('.p-menu__navLabel').on('click',function(){
+    $('.p-menu__btn').on('click',function(){
         $('.p-menu__navMark').toggleClass('js-navBorderNone');
     });
 });

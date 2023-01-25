@@ -132,6 +132,7 @@ div.l-header__langIcon p.js-backColor {
   position: relative;
   display: block;
   transition: 1s;
+  cursor: pointer;
 }
 .l-header__box img:after {
   position: absolute;
@@ -335,6 +336,7 @@ div.l-header__langIcon p.js-backColor {
   top: 0;
   right: 0;
   z-index: 100;
+  cursor: pointer;
 }
 .p-menu__btn a {
   display: block;
@@ -379,6 +381,7 @@ div.l-header__langIcon p.js-backColor {
 .p-menu__wrapper ul {
   display: inline-block;
   vertical-align: top;
+  cursor: pointer;
 }
 .p-menu__wrapper ul a:hover {
   background-color: #fff;
@@ -428,6 +431,7 @@ div.l-header__langIcon p.js-backColor {
   z-index: 0;
   width: 160px;
   height: 56px;
+  cursor: pointer;
 }
 .p-menu__shopLink a {
   display: block;
@@ -471,6 +475,7 @@ div.l-header__langIcon p.js-backColor {
   line-height: 1;
   color: #000;
   text-decoration: none;
+  cursor: pointer;
 }
 .p-menu__linkDot {
   position: absolute;
@@ -1603,6 +1608,7 @@ img.p-eat__imgTarte {
 }
 .p-shop__text header h2 a {
   color: #fff;
+  cursor: pointer;
 }
 .p-shop__svg {
   position: absolute;
@@ -1754,6 +1760,7 @@ img.p-eat__imgTarte {
   padding: 1.9vw 4.777vw;
   font-size: 1.25vw;
   font-family: "courier", sans-serif;
+  cursor: pointer;
 }
 .p-news__btnBox a:hover {
   opacity: 0.5;
@@ -1766,6 +1773,10 @@ img.p-eat__imgTarte {
 .p-news__list li {
   float: left;
   width: 50%;
+  cursor: pointer;
+}
+.p-news__list li:hover {
+  opacity: 0.5;
 }
 .p-news__item {
   display: flex;
@@ -1864,6 +1875,7 @@ img.p-eat__imgTarte {
   background-color: gold;
   margin-right: 4px;
   font-size: 1.333vw;
+  cursor: pointer;
 }
 .p-contact__list li a:hover {
   opacity: 0.5;
@@ -2031,6 +2043,7 @@ img.p-eat__imgTarte {
 .l-footer__list li a {
   color: #fff;
   font-size: 2.999999vw;
+  cursor: pointer;
 }
 .l-footer__list li a:hover {
   opacity: 0.8;

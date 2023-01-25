@@ -138,6 +138,7 @@ div.l-header__langIcon p.js-backColor {
         position: relative;
         display: block;
         transition : 1s;
+        cursor: pointer;
     }
 
     &__box img:after {
@@ -391,6 +392,7 @@ div.l-header__langIcon p.js-backColor {
         top: 0;
         right: 0;
         z-index: 100;
+        cursor: pointer;
     }
 
     &__btn a {
@@ -441,6 +443,7 @@ div.l-header__langIcon p.js-backColor {
     &__wrapper ul {
         display: inline-block;
         vertical-align: top;
+        cursor: pointer;
     }
 
     &__wrapper ul a:hover {
@@ -499,6 +502,7 @@ div.l-header__langIcon p.js-backColor {
         z-index: 0;
         width: 160px;
         height: 56px;
+        cursor: pointer;
     }
 
     &__shopLink a {
@@ -549,6 +553,7 @@ div.l-header__langIcon p.js-backColor {
         line-height: 1;
         color: #000;
         text-decoration: none;
+        cursor: pointer;
     }
 
     &__linkDot {
@@ -1913,6 +1918,7 @@ img.p-eat__imgTarte {
 
     &__text header h2 a {
         color: #fff;
+        cursor: pointer;
     }
 
     &__svg {
@@ -2080,6 +2086,7 @@ img.p-eat__imgTarte {
         padding: 1.9vw 4.777vw;
         font-size: 1.25vw;
         font-family: "courier",sans-serif;
+        cursor: pointer;
     }
 
     &__btnBox a:hover {
@@ -2095,7 +2102,13 @@ img.p-eat__imgTarte {
     &__list li {
         float: left;
         width: 50%;
+        cursor: pointer;
     }
+
+    &__list li:hover {
+        opacity: 0.5;
+    }
+
 
     &__item {
         display: flex;
@@ -2221,6 +2234,7 @@ img.p-eat__imgTarte {
         background-color: gold;
         margin-right: 4px;
         font-size: 1.333vw;
+        cursor: pointer;
     }
 
     &__list li a:hover {
@@ -2429,6 +2443,7 @@ img.p-eat__imgTarte {
     &__list li a {
         color: #fff;
         font-size: 2.999999vw;
+        cursor: pointer;
     }
 
     &__list li a:hover {
